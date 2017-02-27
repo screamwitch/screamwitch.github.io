@@ -2,37 +2,24 @@
 layout: default
 ---
 
-<div id="post" class="container">
-
-	<div class="postthumb"><img src="/thumbnails/{{ page.thumbnail }}" /></div>
-
-	<h1>{{ page.title }}</h1>
-
-	<div class="meta clearfix">
-		<strong>Author:</strong> {{ page.author }}
-
-		{% if page.license %}
-			<br /><strong>License:</strong> {{ page.license }}
-		{% endif %}
-
-		<br /><br />
-		{% if page.homepage %}
-			<a class="btn" href="{{ page.homepage }}"><i class="icon-home"></i> Homepage</a>
-		{% endif %}
-		{% if page.download %}
-			<a class="btn" href="{{ page.download }}"><i class="icon-download-alt"></i> Download</a>
-		{% endif %}
-		{% if page.demo %}
-			<a class="btn" href="{{ page.demo }}"><i class="icon-road"></i> Demo</a>
-		{% endif %}
-		{% if page.license_link %}
-			<a class="btn" href="{{ page.license_link }}"><i class="icon-file"></i> License</a>
-		{% endif %}
-	</div>
-
-
-	<div class="post-content">
-	{{ content }}
-	</div>
-
-</div>
+	<section style="padding-bottom: 0">
+		<article class="wrapper">
+			<div class="post-header">
+			<h2 class="red-title" >{{ page.title }}</h2>
+			<ul class="tags">
+				{% for tag in page.tags %}
+				<li><a href="/tags#{{ tag }}">{{ tag }}</a></li>
+				{% unless forloop.last %}
+				{% endunless %}
+				{% endfor %}
+			</ul>
+			<div class="line-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}<i class="fa fa-paw" aria-hidden="true"></i>{% endif %}</div>
+			</div>
+			<div class="post-content">
+				{{ content }}
+			</div>
+			{% include post-pagination.html %}
+			{% include share.html %}
+		</article>
+	</section>
+	{% include comments.html %}

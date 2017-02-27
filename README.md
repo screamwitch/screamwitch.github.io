@@ -1,21 +1,7 @@
-Jekyll Themes
-=============
+# Blog of Song Kong
+This is a Jekyll theme called Ice bear.
 
-A directory of the best-looking themes for Jekyll blogs
+To learn how to install and use this theme, please check out the [installation guide](http://kongsong.me/blog/ice-bear-jekyll-theme/) for more information.
 
-
-Submitting a Theme
-------------------
-
-Have a theme you want to share?
-
-* Fork the site on GitHub
-* Create a new post in the `_posts` directory and fill out the relevant YAML fields
-* Make a 250x200 thumbnail and drop it in the thumbnails directory. List its filename in the post's markdown file.
-* Test it out, then push your changes up and open a pull request.
-
-
-License
--------
-
-The contents of this repository are licensed under the [GNU Public License.](http://www.gnu.org/licenses/gpl-3.0.html)
+##License
+This theme is open source under MIT License. So feel free to use this Jekyll theme on your site, although linking back to me is more than welcomed.
