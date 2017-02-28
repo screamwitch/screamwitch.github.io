@@ -47,3 +47,11 @@ navbar:
     title: Blog
 
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
+
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : conycony
+  disqus :
+      short_name : conycony
+
