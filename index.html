@@ -1,74 +1,87 @@
 ---
-layout: page
-tagline:
+layout: default
 ---
+<script src="{{ "/styles/index.js" | prepend: site.baseurl }}"></script>
+<div>
+  <a id="posts-btn" class="waves-effect waves-teal btn-flat btn-large" onclick="show_posts();">{{ site.posts_btn }}</a>
+  <a id="projects-btn" class="waves-effect waves-teal btn-flat btn-large" onclick="show_projects();">{{ site.projects_btn }}</a>
+</div>
+<div id="posts">
 
-{% for post in paginator.posts %}
+  <h2 class="my-mini-heading">{{ site.posts_btn }}</h2>
 
-<article class="home">
-
-  <span class="post-date">
-    {% assign d = post.date | date: "%d" | plus:'0' %}
-    {{ post.date | date: "%B" }}
-    {% case d %}
-    {% when 1 or 21 or 31 %}{{ d }}st,
-    {% when 2 or 22 %}{{ d }}nd,
-    {% when 3 or 23 %}{{ d }}rd,
-    {% else %}{{ d }}th,
-    {% endcase %}
-    {{ post.date | date: "%Y" }}
-  </span>
-
-  <h2>
-    <a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-  </h2>
+  <ul>
+    {% for post in site.posts %}
+    <li>
+      <p class="my-item">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="my-link">{{ post.title }}</a><br>
+        <span class="my-item-sub">{{ post.date | date: "%b %-d, %Y" }}</span><br>
+          {{ post.content | strip_html | truncatewords: 20 }}
+      </p>
+    </li>
+    {% endfor %}
+    <li>
+      <p class="my-item">
+        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="my-link">RSS</a> / <a href="{{ "/atom.xml" | prepend: site.baseurl }}" class="my-link">ATOM</a><br>
+        <i class="fa fa-rss" aria-hidden="true"></i> {{ site.rss_badge }}
+    </li>
+  </ul>
 
   <div>
-    {% if post.fullview %}
-    {{ post.content }}
-    {% else %}
-    {% if post.shortinfo %}
-    {{ post.shortinfo }}
-    {% elsif post.description %}
-    {{ post.description }}
-    {% else %}
-    {{ post.excerpt }}
-    {% endif %}
-    {% endif %}
+    <a onclick="hide_lists();" class="waves-effect waves-teal btn-flat btn-large">{{ site.close_btn }}</a>
   </div>
+</div>
 
-</article>
-{% endfor %}
-<hr/>
 
-<ul class="pager"> 
+<div id="projects">
+  <h2 class="my-mini-heading">{{ site.projects_btn }}</h2>
+  <ul>
+    {% for project in site.data.projects %}
+    <li>
+      <p class="my-item"><a href="{{ project.link }}" class="my-link">{{ project.name }}</a><br>
+        {{ project.description }}
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+  <div>
+    <a onclick="hide_lists();" class="waves-effect waves-teal btn-flat btn-large">{{ site.close_btn }}</a>
+  </div>
+</div>
 
-  {% if paginator.previous_page %}
-  <li class="previous">
-    {% if paginator.previous_page == 1 %}
-    <a href="{{ site.BASE_PATH }}/">&larr; Newer</a>
-    {% else %}
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Newer</a>
-    {% endif %}
-  </li>
-  {% else %}
-  <li class="previous disabled">
-    <a>&larr; Newer</a>
-  </li>
-  {% endif %}
-  
-  <li>
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  </li>
+<noscript>
+  <div id="posts-noscript">
 
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Older &rarr;</a>
-  </li>
-  {% else %}
-  <li class="next disabled">
-    <a>Older &rarr;</a>        
-  </li>
-  {% endif %}
+    <h2 class="my-mini-heading">{{ site.posts_btn }}</h2>
 
-</ul>
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        <p class="my-item">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="my-link">{{ post.title }}</a><br>
+          <span class="my-item-sub">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </p>
+      </li>
+      {% endfor %}
+      <li>
+        <p class="my-item">
+          <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="my-link">RSS</a> / <a href="{{ "/atom.xml" | prepend: site.baseurl }}" class="my-link">ATOM</a><br>
+          <span class="my-item-sub"><i class="fa fa-rss" aria-hidden="true"></i> {{ site.rss_badge }}</span>
+      </li>
+    </ul>
+  </div>
+  <div id="projects-noscript">
+    <h2 class="my-mini-heading">{{ site.projects_btn }}</h2>
+    <ul>
+      {% for project in site.data.projects %}
+      <li>
+        <p class="my-item"><a href="{{ project.link }}" class="my-link">{{ project.name }}</a><br>
+          <span class="my-item-sub">
+        {{ project.description }}
+      </span>
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</noscript>
