@@ -11,3 +11,10 @@ baseurl:
 sass:
   sass_dir: public/css
   style: :compressed
+
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : conycony
+  disqus :
+      short_name : conycony
