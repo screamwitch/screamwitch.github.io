@@ -3,10 +3,10 @@
   <channel>
     <title>Jekyll-Uno</title>
     <description>Jekyll-Uno - a minimal, responsive theme for Jekyll</description>
-    <link>http://joshgerdes.com/jekyll-uno/jekyll-uno//</link>
-    <atom:link href="http://joshgerdes.com/jekyll-uno/jekyll-uno//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Feb 2017 20:47:26 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 20:47:26 +0800</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 28 Feb 2017 20:53:48 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 20:53:48 +0800</lastBuildDate>
     <generator>Jekyll v3.0.2</generator>
     
       <item>
@@ -25,8 +25,8 @@
 &lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io/&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://joshgerdes.com/jekyll-uno/jekyll-uno//2017/test/</link>
-        <guid isPermaLink="true">http://joshgerdes.com/jekyll-uno/jekyll-uno//2017/test/</guid>
+        <link>/2017/test/</link>
+        <guid isPermaLink="true">/2017/test/</guid>
         
         <category>Cony</category>
         
@@ -55,8 +55,8 @@
 
 </description>
         <pubDate>Fri, 08 Jan 2016 23:04:23 +0800</pubDate>
-        <link>http://joshgerdes.com/jekyll-uno/jekyll-uno//2016/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://joshgerdes.com/jekyll-uno/jekyll-uno//2016/welcome-to-jekyll/</guid>
+        <link>/2016/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">/2016/welcome-to-jekyll/</guid>
         
         <category>jekyll</category>
         
