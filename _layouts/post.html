@@ -18,8 +18,6 @@ layout: default
             {% if page.next %}
             <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
         </footer>
-
-    </div>
     <!-- 多说评论框 start -->
     <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ site.title }}" data-url="{{ site.url }}"></div>
     <!-- 多说评论框 end -->
@@ -38,5 +36,7 @@ layout: default
     })();
     </script>
     <!-- 多说公共JS代码 end -->
+
+    </div>
 
 </section>
