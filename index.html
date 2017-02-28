@@ -1,39 +1,99 @@
 ---
-layout: default
-title: Home
+title: Dopetrope
+layout: landing
 ---
+  
+	<body class="homepage">
+	{% include header_landing.html %}
 
-<section class="archive">
-{% for post in site.posts %}
-{% unless post.next %}
+		<!-- Main -->
+			<div id="main-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
 
-{% unless forloop.first %}</div></div>{% endunless %}
+							<!-- Portfolio -->
+								<section>
+									<header class="major">
+										<h2>My Portfolio</h2>
+									</header>
+									<div class="row">
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="{{ site.baseurl }}/assets/images/pic02.jpg" alt="" /></a>
+												<header>
+													<h3>Ipsum feugiat et dolor</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<footer>
+													<a href="#" class="button alt">Find out more</a>
+												</footer>
+											</section>
+										</div>
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="{{ site.baseurl }}/assets/images/pic03.jpg" alt="" /></a>
+												<header>
+													<h3>Sed etiam lorem nulla</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<footer>
+													<a href="#" class="button alt">Find out more</a>
+												</footer>
+											</section>
+										</div>
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="{{ site.baseurl }}/assets/images/pic04.jpg" alt="" /></a>
+												<header>
+													<h3>Consequat et tempus</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<footer>
+													<a href="#" class="button alt">Find out more</a>
+												</footer>
+											</section>
+										</div>
+									</div>
+									<div class="row">
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="{{ site.baseurl }}/assets/images/pic05.jpg" alt="" /></a>
+												<header>
+													<h3>Blandit sed adipiscing</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<footer>
+													<a href="#" class="button alt">Find out more</a>
+												</footer>
+											</section>
+										</div>
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="{{ site.baseurl }}/assets/images/pic06.jpg" alt="" /></a>
+												<header>
+													<h3>Etiam nisl consequat</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<footer>
+													<a href="#" class="button alt">Find out more</a>
+												</footer>
+											</section>
+										</div>
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="{{ site.baseurl }}/assets/images/pic07.jpg" alt="" /></a>
+												<header>
+													<h3>Dolore nisl feugiat</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<footer>
+													<a href="#" class="button alt">Find out more</a>
+												</footer>
+											</section>
+										</div>
+									</div>
+								</section>
 
-  <div class="bundle row gutters fadeInDown animated">
-    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
-    <div class="posts-by-year col span_10">
-
-{% else %}
-{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-{% if year != nyear %}
-
-{% unless forloop.first %}</div></div>{% endunless %}
-
-  <div class="bundle row gutters fadeInDown animated">
-    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
-    <div class="posts-by-year col span_10">
-{% endif %}
-{% endunless %}
-
-  <article class="row gutters">
-    <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}" class="col span_8">{{ post.title }}</a>
-    <div class="post-date col span_4">
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time>
-    </div>
-  </article>
-
-{% if forloop.last %}</div></div>{% endif %}
-
-{% endfor %}
-</section>
+						</div>
+					</div>
