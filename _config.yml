@@ -12,3 +12,10 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : conycony
+  disqus :
+      short_name : conycony
