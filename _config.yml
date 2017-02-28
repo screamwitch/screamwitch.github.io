@@ -35,3 +35,10 @@ kramdown:
 
 gems: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : conycony
+  disqus :
+      short_name : conycony
