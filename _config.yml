@@ -8,12 +8,12 @@ logo:               'assets/img/logo.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://taylantatli.github.io/Moon
+url:                https://screamwitch.github.io
 
 # Jekyll
 permalink:          /:title/
 markdown:           kramdown
-highlighter:        rouge
+highlighter:        null
 kramdown:
   auto_ids:         true
   footnote_nr:      1
@@ -74,3 +74,10 @@ jekyll-mentions:
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
+
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : conycony
+  disqus :
+      short_name : conycony
