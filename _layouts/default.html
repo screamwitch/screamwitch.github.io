@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    {% include head.html %}
-  </head>
+<html lang="{{ site.isolang }}" itemscope itemtype="http://schema.org/WebPage">
+  {% include head.html %}
   <body>
-    <div class="container azul">
-      <header class="top row gutters{% if page.title == "Home" %} fadeInLeft animated{% endif %}">
-        <div class="col span_2 center">
-          <!-- TODO: add baseurl to the logo link -->
-          <a href="{{ site.url }}" id="logo" title="{{ site.title }}"
-             style="background-image: url({{site.baseurl}}/public/images/logo.png);"></a>
-        </div>
-        {% include navigation.html %}
-      </header>
-
-      {{ content }}
-
-      <footer>
-        <p>
-          This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/deed.en_US">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    <div class="container">
+      <div class="section my-section" itemprop="mainContentOfPage" itemscope itemtype="https://schema.org/WebPageElement">
+        <h1 itemprop="headline"><a class="my-name" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+        <p class="my-description" itemprop="text">
+          {{ site.about }}
+          <br>
+          <i class="fa fa-map-marker"></i> {{ site.location }}
         </p>
-      </footer>
+        <div class="row">
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            {{ content }}
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- scripts -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{site.baseurl}}/public/js/jquery.fitvids.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("article").fitVids();
-      });
-    </script>
+    {% include footer.html %}
   </body>
 </html>
