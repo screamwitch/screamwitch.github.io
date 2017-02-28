@@ -6,9 +6,29 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Tue, 28 Feb 2017 16:02:24 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 16:02:24 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 16:39:45 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 16:39:45 +0800</lastBuildDate>
 
+    
+      <item>
+        <title>第一篇测试</title>
+        <link>http://localhost:4000/test</link>
+        <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
+        <author></author>
+        <description>&lt;p&gt;内容&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;引用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-CSS&quot;&gt;ul,li{
+	list-style:none;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io/&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
     
       <item>
         <title>Demo post</title>
