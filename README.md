@@ -1,65 +1,41 @@
-# Forty - Jekyll Theme
+# brume
 
-A Jekyll version of the "Forty" theme by [HTML5 UP](https://html5up.net/).  
+I am not a designer so I cannot impress you with breathtaking Jekyll themes, but brume is something that just came to my mind and I had to build it. It is a clean and simple theme, which has an index page that lists all your blog posts divided by year and an about page.
 
-![Forty Theme](assets/images/forty.jpg "Forty Theme")
+This is how the "Home" page looks like.
 
-# How to Use
+![Home](https://dl.dropboxusercontent.com/u/9924988/Screen%20Shot%202014-02-26%20at%2018.48.57.png)
 
-For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details, 
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/), 
-and [creating pages](https://jekyllrb.com/docs/pages/).
+And this is a single post.
 
-- **GitLab**: Simply fork this repository and start editing the `_config.yml` file!  
-- **GitHub**: Fork this reposity and create a branch named `gh-pages`, then start editing the `_config.yml` file! The `.gitlab-ci.yml` file is only needed for GitLab Pages, so feel free to delete this if you are using GitHub instead.
+![Home](https://dl.dropboxusercontent.com/u/9924988/Screen%20Shot%202014-04-06%20at%2012.56.08.png)
 
-# Added Features
+## Usage
 
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Use `_config.yml` to **set whether the homepage tiles should pull pages or posts**, as well as how many to display.
-* Add your **social profiles** easily in `_config.yml`. Only social profiles buttons you enter in `config.yml` show up on the site footer!
-* Set **featured images** in front matter.
+**Important:** The latest version of brume uses `site.baseurl` for links, therefore, if you want to put your site in a subdirectory, update the *_config.yml* file!
 
-# Credits
+- Download the ZIP file and extract it's contents.
+- Open *_config.yml* file and enter your site's URL and add additional configuration or update the existing one if needed.
+- Open *about/index.md* file and add information about you or your site. You can delete this file and directory if not needed.
+- Open *_data/links.yml* and add additional links or update the existing ones that you want to be displayed in the navigation menu.
+- If you don't want to use CC BY-NC 4.0 licence for the content, then you should change the footer text, which is located in *_layouts/default.html*.
+- Generate your site and be happy!
 
-Original README from HTML5 UP:
+### Jekyll < 2.0.0
 
-```
-Forty by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+I try to keep brume up to date with the newest Jekyll version. Jekyll 2.0.0 introduced a lot of changes (like a built in Sass support) that are not backward compatible, therefore I have created a separate branch `legacy` for those, who might be using an older Jekyll version. All the changes that I introduce in `master` will be ported to `legacy`.
 
+## Theme customization
 
-This is Forty, my latest and greatest addition to HTML5 UP and, per its incredibly
-creative name, my 40th (woohoo)! It's built around a grid of "image tiles" that are
-set up to smoothly transition to secondary landing pages (for which a separate page
-template is provided), and includes a number of neat effects (check out the menu!),
-extra features, and all the usual stuff you'd expect. Hope you dig it!
+This theme has 4 predefined colors that can be used for links:
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+- azul
+- ruby
+- amber
+- avocado
 
-(* = not included)
+![Color Examples](https://dl.dropboxusercontent.com/u/9924988/colors_new.png)
 
-AJ
-aj@lkn.io | @ajlkn
+By default it uses *azure*, but if you want to select another one just change the second class of `container` div in *_layouts/default.html* to one of the provided names.
 
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		background-size polyfill (github.com/louisremi)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
-```
-
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+Express your thoughts about brume on Twitter [@aigarsdz](http://twitter.com/aigarsdz), and help me make it better!
