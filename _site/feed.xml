@@ -5,35 +5,9 @@
     <description>Jekyll-Uno - a minimal, responsive theme for Jekyll</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Feb 2017 20:53:48 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 20:53:48 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 20:58:46 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 20:58:46 +0800</lastBuildDate>
     <generator>Jekyll v3.0.2</generator>
-    
-      <item>
-        <title>第一篇测试</title>
-        <description>&lt;p&gt;内容&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;引用&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-CSS&quot;&gt;ul,li{
-	list-style:none;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io/&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
-        <link>/2017/test/</link>
-        <guid isPermaLink="true">/2017/test/</guid>
-        
-        <category>Cony</category>
-        
-        <category>Github</category>
-        
-        
-      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
