@@ -1,5 +1,5 @@
 # Build settings
-permalink   : /blog/:year/:title/
+permalink   : /:title/
 markdown    : kramdown
 highlighter : pygments
 gems: [jekyll-paginate]
@@ -18,8 +18,6 @@ sass:
 title: end2end
 description: "A free Jekyll theme for download"
 keywords: "Jekyll, theme, free, download, SEO, blog, web"
-url: http://nandomoreira.me
-baseurl: "/end2end"
 # baseurl: ""
 
 # google_analytics: UA-52446115-1
