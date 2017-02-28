@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <!-- meta information -->
 <meta charset="utf-8">
 <meta name="description" 
@@ -29,16 +30,16 @@
 <!-- feed links -->
 <link rel="alternate" href="http://localhost:4000/feed.xml" type="application/rss+xml" title="">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container azul">
-      <header class="top row gutters fadeInLeft animated">
-        <div class="col span_2 center">
-          <!-- TODO: add baseurl to the logo link -->
-          <a href="http://localhost:4000" id="logo" title="Brume"
-             style="background-image: url(/public/images/logo.png);"></a>
-        </div>
-        <nav class="col span_10 top-navbar">
+        <header class="top row gutters">
+            <div class="col span_2 center">
+                <!-- TODO: add baseurl to the logo link -->
+                <a href="http://localhost:4000" id="logo" title="Brume" style="background-image: url(/public/images/logo.png);"></a>
+            </div>
+            <nav class="col span_10 top-navbar">
   
   <a href="/" title="Home"
      class="current-page">Home</a>
@@ -48,9 +49,8 @@
   
 </nav>
 
-      </header>
-
-      <section class="archive">
+        </header>
+        <section class="archive">
 
 
 
@@ -97,21 +97,21 @@
 
 </section>
 
-
-      <footer>
-        <p>
-          This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/deed.en_US">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
-        </p>
-      </footer>
+        
+        <footer>
+            <p>
+                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/deed.en_US">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+            </p>
+        </footer>
     </div>
-
     <!-- scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/public/js/jquery.fitvids.js"></script>
     <script>
-      $(document).ready(function(){
+    $(document).ready(function() {
         $("article").fitVids();
-      });
+    });
     </script>
-  </body>
+</body>
+
 </html>
