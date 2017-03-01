@@ -3,7 +3,7 @@
 		<ul class="dl-menu">
 			<li><a href="{{ site.url }}/">Home</a></li>
 			<li>
-				<a href="#">About</a>
+				<a href="#">About Theme</a>
 				<ul class="dl-submenu">
 					<li>
 						<img src="{{ site.url }}/{{ site.logo }}" alt="{{ site.title }} photo" class="author-photo">
@@ -86,7 +86,7 @@
 				</ul><!-- /.dl-submenu -->
 			</li>
 			<li>
-				<a href="#">Posts</a>
+				<a href="#">Blog</a>
 				<ul class="dl-submenu">
 					<li><a href="{{ site.url }}/posts/">All Posts</a></li>
 					<li><a href="{{ site.url }}/tags/">All Tags</a></li>
@@ -98,7 +98,7 @@
 		        {% else %}
 		        {% assign domain = site.url %}
 		    {% endif %}
-		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
+		    <!-- <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li> -->
 		  {% endfor %}
 		</ul><!-- /.dl-menu -->
 	</nav><!-- /.dl-menuwrapper -->
