@@ -25,3 +25,10 @@ sitemap: false
 @import "vendor/animate";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print"
+
+.title .friends{
+  font-size: 15px;
+  font-weight: 300;
+  color: darkgray;
+  text-decoration: underline;
+}
