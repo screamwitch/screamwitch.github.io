@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://screamwitch.github.io/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95/</loc>
+<loc>/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/</loc>
+<lastmod>2017-03-02T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95/</loc>
 <lastmod>2017-03-01T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>https://screamwitch.github.io/404</loc>
+<loc>/404</loc>
 </url>
 <url>
-<loc>https://screamwitch.github.io/</loc>
+<loc>/</loc>
 </url>
 <url>
-<loc>https://screamwitch.github.io/tags/</loc>
+<loc>/tags/</loc>
 </url>
 <url>
-<loc>https://screamwitch.github.io/projects/</loc>
+<loc>/projects/</loc>
 </url>
 <url>
-<loc>https://screamwitch.github.io/posts/</loc>
+<loc>/posts/</loc>
 </url>
 <url>
-<loc>https://screamwitch.github.io/about/</loc>
+<loc>/about/</loc>
 </url>
 </urlset>
