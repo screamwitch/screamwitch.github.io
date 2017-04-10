@@ -8,56 +8,62 @@
 <!--<![endif]-->
 
 <head>
-        <meta charset="UTF-8">
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <title>PHP中的CSRF防御 &#8211; 叫我大王</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="PHP, CSRF">
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://screamwitch.github.io/assets/img/logo.png">
-    <meta name="twitter:title" content="PHP中的CSRF防御">
-    <meta name="twitter:description" content="简单模拟PHP环境下的CSRF防御">
-    
-    <!-- Open Graph -->
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="PHP中的CSRF防御">
-    <meta property="og:description" content="简单模拟PHP环境下的CSRF防御">
-    <meta property="og:url" content="https://screamwitch.github.io/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/">
-    <meta property="og:site_name" content="Cony">
-    <meta property="og:image" content="https://screamwitch.github.io/assets/img/logo.png">
-    
-    
-    
-    <link rel="canonical" href="https://screamwitch.github.io/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/">
-    <link href="https://screamwitch.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Cony Feed">
-    <!-- Handheld -->
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://screamwitch.github.io/assets/css/main.css">
-    <!-- JS -->
-    <script src="https://screamwitch.github.io/assets/js/modernizr-3.3.1.custom.min.js"></script>
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-precomposed.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-144x144.png">
-    <link rel="shortcut icon" type="image/png" href="https://screamwitch.github.io/favicon.png" />
-    <link rel="shortcut icon" href="https://screamwitch.github.io/favicon.ico" />
-    <!-- Background Image -->
-    
-    
-    
-    <style type="text/css">body {background-image:url(https://screamwitch.github.io/assets/img/placeholder-big.jpg);  background-repeat: no-repeat; background-size: cover; }</style>
-    
-    <!-- Post Feature Image -->
-    
+    <meta charset="UTF-8">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<title>PHP中的CSRF防御 &#8211; 叫我大王</title>
+<meta name="description" content=""> 
+<meta name="keywords" content="PHP, CSRF">
+<!-- Twitter Cards -->
 
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://screamwitch.github.io/assets/img/logo.png">
+<meta name="twitter:title" content="PHP中的CSRF防御"> 
+<meta name="twitter:description" content="简单模拟PHP环境下的CSRF防御"> 
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP中的CSRF防御"> 
+<meta property="og:description" content="简单模拟PHP环境下的CSRF防御">
+<meta property="og:url" content="https://screamwitch.github.io/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/">
+<meta property="og:site_name" content="Cony">
+<meta property="og:image" content="https://screamwitch.github.io/assets/img/logo.png">   
+<link rel="canonical" href="https://screamwitch.github.io/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/">
+<link href="https://screamwitch.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Cony Feed">
+<!-- Handheld -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS -->
+<link rel="stylesheet" href="https://screamwitch.github.io/assets/css/main.css">
+<!-- JS -->
+<script src="https://screamwitch.github.io/assets/js/modernizr-3.3.1.custom.min.js"></script>
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://screamwitch.github.io/assets/img/favicons/apple-icon-144x144.png">
+<link rel="shortcut icon" type="image/png" href="https://screamwitch.github.io/favicon.png" />
+<link rel="shortcut icon" href="https://screamwitch.github.io/favicon.ico" />
+<!-- Background Image -->
+  
+<style type="text/css">
+    body {
+        background-image:url(https://screamwitch.github.io/assets/img/placeholder-big.jpg);
+        {
+            % unless site.tiled_bg %
+        }
+        background-repeat: no-repeat;
+        background-size: cover;
+        {
+            % endunless %
+        }
+    }
+</style>
+
+<!-- Post Feature Image -->
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body>
