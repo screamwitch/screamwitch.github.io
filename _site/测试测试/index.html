@@ -262,6 +262,21 @@ Reading time ~1 minute
 
                 </div>
             </div>
+            <div id="container"></div>
+            <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+            <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+            <script>
+            var gitment = new Gitment({
+                id: '',
+                owner: 'screamwitch',
+                repo: 'blog',
+                oauth: {
+                    client_id: '16d078f5667d361d9b8a',
+                    client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+                },
+            })
+            gitment.render('container')
+            </script>
             <!-- UY BEGIN -->
             <!--<div id="uyan_frame"></div>
             <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2129140"></script>-->
