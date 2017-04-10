@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://screamwitch.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://screamwitch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://screamwitch.github.io/" rel="alternate" type="text/html" /><updated>2017-04-11T00:14:18+08:00</updated><id>https://screamwitch.github.io/</id><title type="html">Cony</title><entry><title type="html">JavaScript中的事件委托</title><link href="https://screamwitch.github.io/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" rel="alternate" type="text/html" title="JavaScript中的事件委托" /><published>2017-04-10T00:00:00+08:00</published><updated>2017-04-10T00:00:00+08:00</updated><id>https://screamwitch.github.io/JavaScript中的事件委托</id><content type="html" xml:base="https://screamwitch.github.io/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">&lt;h2 id=&quot;事件委托&quot;&gt;事件委托&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://screamwitch.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://screamwitch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://screamwitch.github.io/" rel="alternate" type="text/html" /><updated>2017-04-11T00:20:07+08:00</updated><id>https://screamwitch.github.io/</id><title type="html">Cony</title><entry><title type="html">JavaScript中的事件委托</title><link href="https://screamwitch.github.io/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" rel="alternate" type="text/html" title="JavaScript中的事件委托" /><published>2017-04-10T00:00:00+08:00</published><updated>2017-04-10T00:00:00+08:00</updated><id>https://screamwitch.github.io/JavaScript中的事件委托</id><content type="html" xml:base="https://screamwitch.github.io/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">&lt;h2 id=&quot;事件委托&quot;&gt;事件委托&lt;/h2&gt;
 
 &lt;p&gt;    事件，就是文档与浏览器窗口发生的一些特定的交互瞬间，像是点击（click）、加载（load）、鼠标进入（mouseenter）等。&lt;br /&gt;
     委托，就是这件事我不做，我让别人帮我做。当然了，委托这种事除了自己的亲爹亲妈，别人才不会管你呢，所以事件委托必须是委托给父级元素。&lt;/p&gt;
@@ -49,8 +49,102 @@ jquery中使用on方法进行事件绑定时，接收的第一个参数event是�
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'非动态父级元素'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;动态元素&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){});&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//给“动态元素”绑定事件，事件委托给非动态生成的父级元素&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;    最后再放一个例子吧，这个例子中的元素class是js动态改变的，改变后绑定事件使用了事件委托。&lt;/p&gt;
-&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;rywOze&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;Conycony&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;切换效果&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Conycony/pen/rywOze/&quot;&gt;切换效果&lt;/a&gt; by Cony (&lt;a href=&quot;http://codepen.io/Conycony&quot;&gt;@Conycony&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;    最后再放一个例子吧，这个例子中的元素class是js动态改变的，改变后绑定事件使用了事件委托。
+&lt;a href=&quot;http://codepen.io/Conycony/pen/rywOze&quot;&gt;点我，我就是例子&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;</content><category term="JavaScript" /><summary type="html">懒癌晚期患者的第一篇——事件委托</summary></entry><entry><title type="html">PHP中的CSRF防御</title><link href="https://screamwitch.github.io/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/" rel="alternate" type="text/html" title="PHP中的CSRF防御" /><published>2017-03-02T00:00:00+08:00</published><updated>2017-03-02T00:00:00+08:00</updated><id>https://screamwitch.github.io/PHP中的CSRF防御</id><content type="html" xml:base="https://screamwitch.github.io/PHP%E4%B8%AD%E7%9A%84CSRF%E9%98%B2%E5%BE%A1/">&lt;h2 id=&quot;什么是csrf&quot;&gt;什么是CSRF？&lt;/h2&gt;
+&lt;p&gt;    CSRF（Cross-site request forgery）跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。与XSS攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比XSS更具危险性。&lt;/p&gt;
+&lt;div align=&quot;right&quot;&gt;——以上源自百度百科&lt;/div&gt;
+
+&lt;h2 id=&quot;csrf是如何发生的&quot;&gt;CSRF是如何发生的？&lt;/h2&gt;</content><category term="PHP" /><category term="CSRF" /><summary type="html">简单模拟PHP环境下的CSRF防御</summary></entry><entry><title type="html">测试测试</title><link href="https://screamwitch.github.io/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95/" rel="alternate" type="text/html" title="测试测试" /><published>2017-03-01T00:00:00+08:00</published><updated>2017-03-01T00:00:00+08:00</updated><id>https://screamwitch.github.io/测试测试</id><content type="html" xml:base="https://screamwitch.github.io/%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95/">&lt;h1 id=&quot;测试标题level-1&quot;&gt;测试标题Level 1&lt;/h1&gt;
+
+&lt;h2 id=&quot;测试标题level-2&quot;&gt;测试标题Level 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;测试标题level-3&quot;&gt;测试标题Level 3&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;引用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;有序列表&quot;&gt;有序列表&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;list1
+    &lt;ol&gt;
+      &lt;li&gt;item1-1&lt;/li&gt;
+      &lt;li&gt;item1-2&lt;/li&gt;
+      &lt;li&gt;item1-3&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list2
+    &lt;ol&gt;
+      &lt;li&gt;item2-1&lt;/li&gt;
+      &lt;li&gt;item2-2&lt;/li&gt;
+      &lt;li&gt;item2-3&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;无序列表&quot;&gt;无序列表&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ul&lt;/li&gt;
+  &lt;li&gt;ul&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;table表格&quot;&gt;table表格&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;thead-left&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;thead-center&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;thead-right&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;left&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;center&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;right&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;left&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;center&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;right&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;代码&quot;&gt;代码&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;button&quot;&gt;button&lt;/h3&gt;
+
+&lt;div mardown=&quot;0&quot; class=&quot;btn&quot;&gt;auto button&lt;/div&gt;
+
+&lt;div mardown=&quot;0&quot; class=&quot;btn btn-success&quot;&gt;success button&lt;/div&gt;
+
+&lt;div mardown=&quot;0&quot; class=&quot;btn btn-warning&quot;&gt;warning button&lt;/div&gt;
+
+&lt;div mardown=&quot;0&quot; class=&quot;btn btn-danger&quot;&gt;danger button&lt;/div&gt;
+
+&lt;div mardown=&quot;0&quot; class=&quot;btn btn-info&quot;&gt;info button&lt;/div&gt;
+
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;pRYRvB&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;Conycony&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;二级菜单及hove 箭头&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Conycony/pen/pRYRvB/&quot;&gt;二级菜单及hove 箭头&lt;/a&gt; by Cony (&lt;a href=&quot;http://codepen.io/Conycony&quot;&gt;@Conycony&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;</content><category term="JavaScript" /><summary type="html">懒癌晚期患者的第一篇——事件委托</summary></entry></feed>
+&lt;h3 id=&quot;链接&quot;&gt;链接&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;</content><category term="demo" /><summary type="html">这是第一篇博文，主要测试各功能.</summary></entry></feed>

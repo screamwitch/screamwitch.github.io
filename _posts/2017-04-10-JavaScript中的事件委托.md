@@ -53,7 +53,7 @@ $('非动态父级元素').on("click","动态元素",function(){});
   
   
 &nbsp;&nbsp;&nbsp;&nbsp;最后再放一个例子吧，这个例子中的元素class是js动态改变的，改变后绑定事件使用了事件委托。
-<p data-height="265" data-theme-id="0" data-slug-hash="rywOze" data-default-tab="html,result" data-user="Conycony" data-embed-version="2" data-pen-title="切换效果" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/rywOze/">切换效果</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+[点我，我就是例子](http://codepen.io/Conycony/pen/rywOze)
+
 
 [回到拉萨](https://screamwitch.github.io)
