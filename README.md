@@ -1,67 +1,52 @@
-Book
-====
+Jekyll Clean Dark
+============
 
-Book, a simple Jekyll theme. [Demo](http://kkninjae.github.io/book/)
+[![Gem Version](https://badge.fury.io/rb/jekyll-clean-dark.svg)](https://badge.fury.io/rb/jekyll-clean-dark)
 
-### Screenshots
+This theme was created on top of Jekyll Clean theme by Scotte, you can view the original version in action [on his blog](https://scotte.github.io).
 
-![](http://kkninjae.github.io/book/assets/img/mobile.jpg)
+* Get it from [github](https://github.com/streetturtle/jekyll-clean-dark).
+* See the [live demo](http://pavelmakhov.com/jekyll-clean-dark).
+* See it [in action on my own blog](http://pavelmakhov.com).
 
-![](http://kkninjae.github.io/book/assets/img/desktop.jpg)
+This theme uses some parts of Twitter Bootstrap, which allows it to look nice on a mobile devices using a collapsable nav bar and hiding the
+sidebar.
 
-![](http://kkninjae.github.io/book/assets/img/404.jpg)
+Optionally you can use:
 
-### Features
+ - [Disqus](http://disqus.com) as a comments system;
+ - [Google Analytics](http://www.google.com/analytics/);
+ - [Yandex Metrica](http://metrica.yandex.com);
+ - Blog tags;
+ - Share buttons.
 
-* Responsive layout and mobile first
-* Customized [404](http://kkninjae.github.io/book/hehe) page
-* Footer link is the back-home link
+All these features could be set up in `_config.yml`. Also you can have social icons which could lead to your social profiles. It uses [font-awesome](http://fontawesome.io/), so you can have any icon you want to any social profile. Out-of-the box it has: LinkedIn, GitHub, StackOverflow, LastFm, Instagram. And you can easily add more by adding new style in `theme.css` and setting it in `_config.yml`.
 
-### Get started
+Installation
+==
 
-1.  fork the [repo](https://github.com/kkninjae/book/fork).
-2.  clone `git clone https://github.com/username/book`
-3.  run `jekyll serve -w`
+If you dont't have your own blog you can clone this repository and put your articles in a `_posts` folder.
+If you already have your own blog then I think you can clone this repository and copy-paste content keeping your `_posts` folder.
 
-[http://localhost:4000](http://localhost:4000) should be ready.
-
-Customization
--------------
-
-### _config.yml file
-
-* title: site name
-* description: site description
-* url: site url
-* avatar: absolute path of avatar which is a picture (140px * 140px) on the index page.
-* favicon: absolute path of site favicon
-* google_analytics: id for google analystics
-* disqus_shortname: shortname of disque comment system
-* about: content on the about page.
-  you can write more than one paragraph but the format should be like the original one.
-  the special word `?link?` will be replaced by one of the links which are listed under links.
-
-### warning
-
-Please do not delete the first two lines of style.css file.
-
-End.
-----
-
-If you like it, [star](https://github.com/kkninjae/book) it.
-
-If you have a problem, [github issue is ready](https://github.com/kkninjae/book/issues).
-
-Open Sources
-------------
-
-The following open sources have been used in this project.
-
-* [Google Fonts](https://www.google.com/fonts)
-* [jQuery](https://jquery.com/)
-* [highlight.js](https://highlightjs.org/)
+After you will have to set up your `_config.yml`
 
 License
--------
+=======
 
-[MIT](./LICENSE)
+The content of this theme is distributed and licensed under a
+[Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+    This license lets others distribute, remix, tweak, and build upon your work,
+    even commercially, as long as they credit you for the original creation. This
+    is the most accommodating of licenses offered. Recommended for maximum
+    dissemination and use of licensed materials.
+
+In other words: you can do anything you want with this theme on any site, just please
+provide a link to the original theme on github.
+
+This theme includes the following files which are the properties of their
+respective owners:
+
+* js/bootstrap.min.js - [bootstrap](http://getbootstrap.com)
+* css/bootstrap.min.css - [bootstrap](http://getbootstrap.com)
+* js/jquery.min.js - [jquery](https://jquery.com)
