@@ -16,6 +16,8 @@
     
 
     
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    
 </head>
 <body style="background: url('/resources/images/main_front.jpg') no-repeat fixed;
                             background-size: cover">
@@ -37,17 +39,15 @@
             <article>
     <header>
         
-        <h1>A quick view of aliquam post</h1>
-        
-        <div class="post-meta">
+        <h1>A quick view of aliquam post</h1>  <div class="post-meta">
     <small>
         <time datetime="08 06 2016">
             08 June, 2016
         </time>
         <span class="tag-sep"> | </span>
         
-        <a class="comment_count" href="/aliquam-post-example/#disqus_thread"
-           data-disqus-identifier="/aliquam-post-example"></a>
+        <a class="comment_count" href="/example/aliquam-post-example#disqus_thread"
+           data-disqus-identifier="/example/aliquam-post-example"></a>
         <span class="tag-sep"> | </span>
         
         <nav class="tags">
@@ -85,10 +85,19 @@ Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus
 <p class="bottomless"><a name="definition-dfa"></a></p>
 
 <div class="env-header">
-  <p>Definition</p>
+  <p>Definition 1.0</p>
 </div>
 
 <div class="definition alert">
+  <p>A <strong>deterministic finite automata</strong> <script type="math/tex">M</script> is a 5-tuple <script type="math/tex">(Q, Σ, δ, q_0, F )</script>, where</p>
+
+  <ol>
+    <li><script type="math/tex">Q</script> is a finite set called the <strong>states</strong>,</li>
+    <li><script type="math/tex">Σ</script> is a finite set called the <strong>alphabet</strong>,</li>
+    <li><script type="math/tex">δ : Q × Σ → Q</script> is the <strong>transition function</strong>,</li>
+    <li><script type="math/tex">q_0 ∈ Q</script> is the <strong>start state</strong>, and</li>
+    <li><script type="math/tex">F ⊆ Q</script> is the set of <strong>accept states</strong>.</li>
+  </ol>
 
 </div>
 
@@ -304,8 +313,22 @@ Mauris rutrum ullamcorper pellentesque. Aliquam posuere euismod erat, ac consequ
 <p>Abbreviation: <abbr title="Content Management System">CMS</abbr></p>
 
     <footer>
-        
-        <div id="disqus_thread"></div>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: 'A quick view of aliquam post',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+         <div id="disqus_thread"></div>
 <script>
     /**
      * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -313,8 +336,8 @@ Mauris rutrum ullamcorper pellentesque. Aliquam posuere euismod erat, ac consequ
      */
     var disqus_developer = 1;
     var disqus_config = function () {
-        this.page.url = 'https://screamwitch.github.io/aliquam-post-example/';
-        this.page.identifier = '/aliquam-post-example';
+        this.page.url = 'http://localhost:4000/example/aliquam-post-example';
+        this.page.identifier = '/example/aliquam-post-example';
         this.page.title = "A quick view of aliquam post";
     };
     (function() { // DON'T EDIT BELOW THIS LINE
@@ -326,22 +349,24 @@ Mauris rutrum ullamcorper pellentesque. Aliquam posuere euismod erat, ac consequ
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-        
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
     </footer>
 </article>
 
         </div>
+
     </main>
         <nav class="paginator">
     <ul>
         
         
-        <li><a class="fancy-nav" href="/lorem-ipsum/">&lt;&nbsp;Previous</a></li>
+        <li><a class="fancy-nav" href="/example/lorem-ipsum">&lt;&nbsp;Previous</a></li>
         
         <li class="sep">&nbsp;</li>
         <li><a class="fancy-nav" href="#">Top</a></li>
         <li class="sep">&nbsp;</li>
+        
+        <li><a class="fancy-nav" href="/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98">Next&nbsp;&gt;</a></li>
         
         
     </ul>
@@ -349,9 +374,24 @@ Mauris rutrum ullamcorper pellentesque. Aliquam posuere euismod erat, ac consequ
 
     <footer>
         
+<blockquote id="footer-quote">
+    <p>
+        
+        Some fancy quote
+        
+    </p>
+    <footer>
+        <cite>
+        
+        - Cony
+        
+    </cite>
+    </footer>
+</blockquote>
+
 <div id="footer-main">
     <small>
-        &copy; 2016 . ALL RIGHTS RESERVED.
+        &copy; 2016 Cony. ALL RIGHTS RESERVED.
     </small>
 </div>
 

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        
+        JavaScript中的事件委托
+        
+    </title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/resources/css/main.css"/>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    
+</head>
+<body style="background: url('/resources/images/main_front.jpg') no-repeat fixed;
+                            background-size: cover">
+<div id="wrapper">
+    <header>
+    <nav id="main-nav">
+        <ul>
+            <li><a class="fancy-nav" href="/index.html">home</a></li>
+            
+            <li><a class="fancy-nav" href="/categories/example">example</a></li>
+            
+            <li><a class="fancy-nav" href="/pages/about.html">about</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main id="start">
+        <div class="articles">
+            <article>
+    <header>
+        
+        <h1>JavaScript中的事件委托</h1>  <div class="post-meta">
+    <small>
+        <time datetime="10 04 2017">
+            10 April, 2017
+        </time>
+        <span class="tag-sep"> | </span>
+        
+        <a class="comment_count" href="/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98#disqus_thread"
+           data-disqus-identifier="/JavaScript中的事件委托"></a>
+        <span class="tag-sep"> | </span>
+        
+        <nav class="tags">
+    <ul>
+        
+        <li><a href="/tags/javascript.html">JavaScript</a><span>&nbsp;&nbsp;</span></li>
+        
+    </ul>
+</nav>
+
+    </small>
+</div>
+
+    </header>
+    <h2 id="事件委托">事件委托</h2>
+
+<p>    事件，就是文档与浏览器窗口发生的一些特定的交互瞬间，像是点击（click）、加载（load）、鼠标进入（mouseenter）等。<br />
+    委托，就是这件事我不做，我让别人帮我做。当然了，委托这种事除了自己的亲爹亲妈，别人才不会管你呢，所以事件委托必须是委托给父级元素。</p>
+
+<h2 id="为什么要用事件委托">为什么要用事件委托</h2>
+
+<p>    那么各位老铁们就要问了，明明自己就能干的事，为啥要委托给别人？<br />
+    且听我细细道来~<br />
+    先看下面这段代码：</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="BWXmNY" data-default-tab="js,result" data-user="Conycony" data-embed-version="2" data-pen-title="未委托" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/BWXmNY/">未委托</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>    在上面的代码中，点击li标签，分别会执行不同的逻辑，分别用各自的点击事件来完成的。<br />
+    在JavaScript中，每一个函数都是对象，都会占用内存；内存中的对象越多，页面的性能就越差。在实际开发中，可能会有人给每个按钮都添加一个onclick事件，如果像这样不分青红皂白的向页面中添加大量的处理程序，就会影响页面的性能。<br />
+    那么，类似的逻辑要怎么提升页面的性能呢？对“事件处理程序过多”问题的解决方案，就是<strong>事件委托</strong>。</p>
+
+<h2 id="原生js中的事件委托">原生js中的事件委托</h2>
+<p>    上面的代码可以利用事件委托来进行修改：</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="YZmrNz" data-default-tab="js,result" data-user="Conycony" data-embed-version="2" data-pen-title="原生js事件委托" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/YZmrNz/">原生js事件委托</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>    在这段代码里，我们将事件委托给了li的父级元素ul，也就是#list，由于所有的li元素都是#list的子节点，而且它们的事件会<strong>冒泡</strong>（肯定有人会问什么是冒泡，好的，下一篇就写事件冒泡），所以每个li元素的点击事件最终都会被#list的点击函数处理。在这个函数中，我们通过获取<strong>事件源e.target</strong>的id，并用switch语句检测事件源id，来决定当前的点击事件要执行什么逻辑。以上就构成了原生js的事件委托。</p>
+
+<h2 id="事件委托更为重要的作用">事件委托更为重要的作用</h2>
+<p>    肯定有老铁发现过以下问题：</p>
+
+<ol>
+  <li>js动态生成的元素绑定事件无效；</li>
+  <li>元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。</li>
+</ol>
+
+<p>    遇到上面的问题，有些老铁可能就会懵了，这是为什么呢？<br />
+    这是因为事件绑定只对dom中存在的元素有效，对于我们后来动态增加的元素是监测不到，所以绑定不了。<br />
+    同样，当你使用var aa = document.getElementsByTagName(“动态生成的元素”);来获取动态生成的元素的时候也是获取不到的，因为网页只会执行一次初始化绑定，之后动态生成的dom元素也是监测不到的。<br />
+    针对这个问题，解决的办法有以下两种：</p>
+
+<ol>
+  <li>生成元素的同时就绑定事件：</li>
+</ol>
+<p data-height="265" data-theme-id="0" data-slug-hash="WpVamM" data-default-tab="result" data-user="Conycony" data-embed-version="2" data-pen-title="未来元素绑定事件" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/WpVamM/">未来元素绑定事件</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<ol>
+  <li>使用事件委托<br />
+jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'非动态父级元素'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="s2">"动态元素"</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
+<span class="c1">//给“动态元素”绑定事件，事件委托给非动态生成的父级元素</span></code></pre></figure>
+
+<p>    最后再放一个例子吧，这个例子中的元素class是js动态改变的，改变后绑定事件使用了事件委托。
+<a href="http://codepen.io/Conycony/pen/rywOze">点我，我就是例子</a></p>
+
+<p><a href="https://screamwitch.github.io">回到拉萨</a></p>
+
+    <footer>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: 'JavaScript中的事件委托',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+         <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_developer = 1;
+    var disqus_config = function () {
+        this.page.url = 'http://localhost:4000/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98';
+        this.page.identifier = '/JavaScript中的事件委托';
+        this.page.title = "JavaScript中的事件委托";
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+    </footer>
+</article>
+
+        </div>
+
+    </main>
+        <nav class="paginator">
+    <ul>
+        
+        
+        <li><a class="fancy-nav" href="/example/aliquam-post-example">&lt;&nbsp;Previous</a></li>
+        
+        <li class="sep">&nbsp;</li>
+        <li><a class="fancy-nav" href="#">Top</a></li>
+        <li class="sep">&nbsp;</li>
+        
+        
+    </ul>
+</nav>
+
+    <footer>
+        
+<blockquote id="footer-quote">
+    <p>
+        
+        Some fancy quote
+        
+    </p>
+    <footer>
+        <cite>
+        
+        - Cony
+        
+    </cite>
+    </footer>
+</blockquote>
+
+<div id="footer-main">
+    <small>
+        &copy; 2016 Cony. ALL RIGHTS RESERVED.
+    </small>
+</div>
+
+    </footer>
+</div>
+
+</body>
+</html>

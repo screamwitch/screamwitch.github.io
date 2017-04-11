@@ -1,17 +1,28 @@
----
-layout: default
+--- 
+layout: default 
 ---
 <article>
     <header>
         {% if page.title %}
-        <h1>{{ page.title }}</h1>
-        {% endif %}
-        {% include post_meta.html %}
+        <h1>{{ page.title }}</h1> {% endif %} {% include post_meta.html %}
     </header>
     {{ page.content }}
     <footer>
-        {% if page.comments %}
-        {% include disqus.html %}
-        {% endif %}
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: '{{ page.title }}',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+        {% if page.comments %} {% include disqus.html %} {% endif %}
     </footer>
 </article>

@@ -16,6 +16,8 @@
     
 
     
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    
 </head>
 <body style="background: url('/resources/images/main_front.jpg') no-repeat fixed;
                             background-size: cover">
@@ -37,17 +39,15 @@
             <article>
     <header>
         
-        <h1>Lerem Ipsum</h1>
-        
-        <div class="post-meta">
+        <h1>Lerem Ipsum</h1>  <div class="post-meta">
     <small>
         <time datetime="07 06 2016">
             07 June, 2016
         </time>
         <span class="tag-sep"> | </span>
         
-        <a class="comment_count" href="/lorem-ipsum/#disqus_thread"
-           data-disqus-identifier="/lorem-ipsum"></a>
+        <a class="comment_count" href="/example/lorem-ipsum#disqus_thread"
+           data-disqus-identifier="/example/lorem-ipsum"></a>
         <span class="tag-sep"> | </span>
         
         <nav class="tags">
@@ -70,8 +70,22 @@
 
 
     <footer>
-        
-        <div id="disqus_thread"></div>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: 'Lerem Ipsum',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+         <div id="disqus_thread"></div>
 <script>
     /**
      * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -79,8 +93,8 @@
      */
     var disqus_developer = 1;
     var disqus_config = function () {
-        this.page.url = 'https://screamwitch.github.io/lorem-ipsum/';
-        this.page.identifier = '/lorem-ipsum';
+        this.page.url = 'http://localhost:4000/example/lorem-ipsum';
+        this.page.identifier = '/example/lorem-ipsum';
         this.page.title = "Lerem Ipsum";
     };
     (function() { // DON'T EDIT BELOW THIS LINE
@@ -92,12 +106,12 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-        
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
     </footer>
 </article>
 
         </div>
+
     </main>
         <nav class="paginator">
     <ul>
@@ -107,7 +121,7 @@
         <li><a class="fancy-nav" href="#">Top</a></li>
         <li class="sep">&nbsp;</li>
         
-        <li><a class="fancy-nav" href="/aliquam-post-example/">Next&nbsp;&gt;</a></li>
+        <li><a class="fancy-nav" href="/example/aliquam-post-example">Next&nbsp;&gt;</a></li>
         
         
     </ul>
@@ -115,9 +129,24 @@
 
     <footer>
         
+<blockquote id="footer-quote">
+    <p>
+        
+        Some fancy quote
+        
+    </p>
+    <footer>
+        <cite>
+        
+        - Cony
+        
+    </cite>
+    </footer>
+</blockquote>
+
 <div id="footer-main">
     <small>
-        &copy; 2016 . ALL RIGHTS RESERVED.
+        &copy; 2016 Cony. ALL RIGHTS RESERVED.
     </small>
 </div>
 
