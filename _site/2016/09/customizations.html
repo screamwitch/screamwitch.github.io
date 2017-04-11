@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blog Name</title>
+  <title>Blog Name | Customizations </title>
   <meta name="theme-color" content="#222222" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/jquery.min.js"></script>
@@ -60,226 +60,114 @@
     </div>
   </nav>
 
-
     <div class="wrapper">
       <div class="content">
         <div class="container container-center">
           <div class="row">
             <div class="col-md-8">
-              <div class="well">
-                
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/12/jekyll-clean-theme">
-      Jekyll Dark Clean Theme
-    </a>
-  </h2>
+              <div class="article">
+                <div class="well">
+                  <h1><a href="/2016/09/customizations">Customizations</a></h1>
+                  <div class="post-meta">
+                    <div class="post-time">
+                      <i class="fa fa-calendar"></i>
+                      <time>21 Sep 2016</time>
+                    </div>
+                    <ul>
+                      
+                        <li><a href="/tag/customizations">customizations</a></li>
+                      
+                        <li><a href="/tag/jekyll">jekyll</a></li>
+                      
+                    </ul>
+                  </div>
+                  <div class="post-content">
+                    <div id="toc" class="toc"></div>
+                    <h1 id="accent-color">Accent color</h1>
 
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-12-02'>02 Dec 2016</time>
-  </div>
-  <ul>
+<p>Accent color is color for some important elements, such as links, buttons, icons. Currently accent color is <span class="label" style="background-color:#3CA2A2; color:#444444">#3CA2A2</span>. This theme has some more predefined colors available in <strong>theme.scss</strong>:</p>
+
+<blockquote class="filename">
+  <p>theme.scss</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-sass" data-lang="sass"> <span class="c1">// Several accent colors, choose one or create your own!
+</span> <span class="nv">$accent-color</span><span class="p">:</span> <span class="mh">#3CA2A2</span><span class="err">;</span>    <span class="o">//</span> <span class="n">original</span> <span class="o">=</span><span class="p">)</span>
+ <span class="c1">//$accent-color: #C38FD6;  // velvet
+</span> <span class="c1">//$accent-color: #8FD6B3;  // greenish
+</span> <span class="c1">//$accent-color: #35B4DE;  // bluish
+</span> <span class="c1">//$accent-color: #D2E354;  // yellowish
+</span> <span class="c1">// $accent-color: #52B54B;  // green
+</span> </code></pre></figure>
+
+<p>You can use one of them (just hover over the label to see accent color in action) or define your own!</p>
+
+<p><span class="label" style="background-color:#C38FD6; color:#444444">#C38FD6</span>, <span class="label" style="background-color:#8FD6B3; color:#444444">#8FD6B3</span>, <span class="label" style="background-color:#35B4DE; color:#444444">#35B4DE</span>, <span class="label" style="background-color:#D2E354; color:#444444">#D2E354</span>, <span class="label" style="background-color:#52B54B; color:#444444">#52B54B</span>.</p>
+
+<script>
+  $('.label').hover(function(){
+    var color = $(this).text();
+    [].forEach.call($('a'), function(item) {
+      item.style.color = color
+    })
+  })
+</script>
+
+<style>
+  .label{
+    cursor: default;
+    border-radius: 5px;
+    padding: 5px 8px;
+  }
+</style>
+
+<h1 id="other-colors">Other colors</h1>
+
+<p>As Jekyll comes with support of SASS I put colors in variables. Here are the ones which could be easily changed:</p>
+
+<blockquote class="filename">
+  <p>theme.scss</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$font-color</span><span class="p">:</span> <span class="mh">#dddddd</span><span class="p">;</span>
+<span class="nv">$background-color</span><span class="p">:</span> <span class="mh">#292929</span><span class="p">;</span>
+<span class="nv">$post-panel-color</span><span class="p">:</span> <span class="mh">#444</span><span class="p">;</span>
+<span class="nv">$footer-background-color</span><span class="p">:</span> <span class="mh">#292c2f</span><span class="p">;</span>
+<span class="nv">$note-color</span><span class="p">:</span> <span class="mh">#87CEFA</span><span class="p">;</span>
+<span class="nv">$warning-color</span><span class="p">:</span> <span class="mh">#ffff00</span><span class="p">;</span></code></pre></figure>
+
+                    
+
+<div class="share-bar">
+  <ul class="share-buttons">
     
-    <li><a href="http://localhost:4000/tag/jekyll">jekyll</a></li>
+    <li class="share-facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2016/09/customizations" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
   </ul>
 </div>
 
-  <div class="post-descr">
-    <p>
-      Here I want to introduce you the dark theme for Jekyll.
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/11/text-formatting">
-      Text formatting
-    </a>
-  </h2>
 
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-11-03'>03 Nov 2016</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/jekyll">jekyll</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Text formatting examples.
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/10/code-syntax-highlighting">
-      Code snippets
-    </a>
-  </h2>
-
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-10-02'>02 Oct 2016</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/code">code</a></li>
-    
-    <li><a href="http://localhost:4000/tag/jekyll">jekyll</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Sample post showing how code samples would look like
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/09/customizations">
-      Customizations
-    </a>
-  </h2>
-
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-09-21'>21 Sep 2016</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/customizations">customizations</a></li>
-    
-    <li><a href="http://localhost:4000/tag/jekyll">jekyll</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Few customizations available out of the box!
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/09/be-social">
-      Be social
-    </a>
-  </h2>
-
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-09-16'>16 Sep 2016</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/tags">tags</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Built-in share buttons!
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/08/analytics-tags-comments">
-      Analytics, tags and comments
-    </a>
-  </h2>
-
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-08-02'>02 Aug 2016</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/jekyll">jekyll</a></li>
-    
-    <li><a href="http://localhost:4000/tag/analytics">analytics</a></li>
-    
-    <li><a href="http://localhost:4000/tag/tags">tags</a></li>
-    
-    <li><a href="http://localhost:4000/tag/comments">comments</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Here you'll find how to setup analytics, tags and comments for your blog
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2016/07/images">
-      Images
-    </a>
-  </h2>
-
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2016-07-02'>02 Jul 2016</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/images">images</a></li>
-    
-    <li><a href="http://localhost:4000/tag/jekyll">jekyll</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Sample post showing how to use images
-    </p>
-  </div>
-  
-  <h2 class="post-title">
-    <a href="http://localhost:4000/2015/11/installation">
-      Installation
-    </a>
-  </h2>
-
-  <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='2015-11-02'>02 Nov 2015</time>
-  </div>
-  <ul>
-    
-    <li><a href="http://localhost:4000/tag/installation">installation</a></li>
-    
-  </ul>
-</div>
-
-  <div class="post-descr">
-    <p>
-      Here you'll find out how to install this theme
-    </p>
-  </div>
-  
-
-
-<div class="post-footer">
-  <div class="column-full">
-    <h3><a href="http://localhost:4000/archive.html">Blog archive</a></h3>
-  </div>
-</div>
-
+                  </div>
+                  
+                </div>
               </div>
             </div>
             <div class="col-md-4 hidden-xs">
@@ -343,6 +231,8 @@
             </div>
           </div>
         </div>
+        
+
       </div>
           <footer class="footer-distributed">
       <div class="container">

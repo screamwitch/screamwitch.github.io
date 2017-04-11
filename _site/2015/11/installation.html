@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title> | Customizations </title>
+  <title>Blog Name | Installation </title>
   <meta name="theme-color" content="#222222" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/jquery.min.js"></script>
@@ -47,7 +47,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"></a>
+        <a class="navbar-brand" href="/">Blog Name</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -67,94 +67,51 @@
             <div class="col-md-8">
               <div class="article">
                 <div class="well">
-                  <h1><a href="/2016/09/21/customizations.html">Customizations</a></h1>
+                  <h1><a href="/2015/11/installation">Installation</a></h1>
                   <div class="post-meta">
                     <div class="post-time">
                       <i class="fa fa-calendar"></i>
-                      <time>21 Sep 2016</time>
+                      <time>02 Nov 2015</time>
                     </div>
                     <ul>
                       
-                        <li><a href="/tag/customizations">customizations</a></li>
-                      
-                        <li><a href="/tag/jekyll">jekyll</a></li>
+                        <li><a href="/tag/installation">installation</a></li>
                       
                     </ul>
                   </div>
                   <div class="post-content">
                     <div id="toc" class="toc"></div>
-                    <h1 id="accent-color">Accent color</h1>
+                    <h2 id="installation">Installation</h2>
 
-<p>Accent color is color for some important elements, such as links, buttons, icons. Currently accent color is <span class="label" style="background-color:#3CA2A2; color:#444444">#3CA2A2</span>. This theme has some more predefined colors available in <strong>theme.scss</strong>:</p>
+<p>If you dont’t have your own blog you can clone this repository and put your articles in a <code class="highlighter-rouge">_posts</code> folder.<br />
+If you already have your own blog then I think you can clone this repository and copy-paste content keeping your <code class="highlighter-rouge">_posts</code> folder.</p>
 
-<blockquote class="filename">
-  <p>theme.scss</p>
+<p>After you will have to set up your <code class="highlighter-rouge">_config.yml</code></p>
+
+<h2 id="license">License</h2>
+
+<p>The content of this theme is distributed and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 License</a></p>
+
+<blockquote>
+  <p>This license lets others distribute, remix, tweak, and build upon your work,<br />
+even commercially, as long as they credit you for the original creation. This<br />
+is the most accommodating of licenses offered. Recommended for maximum<br />
+dissemination and use of licensed materials.</p>
 </blockquote>
 
-<figure class="highlight"><pre><code class="language-sass" data-lang="sass"> <span class="c1">// Several accent colors, choose one or create your own!
-</span> <span class="nv">$accent-color</span><span class="p">:</span> <span class="mh">#3CA2A2</span><span class="err">;</span>    <span class="o">//</span> <span class="n">original</span> <span class="o">=</span><span class="p">)</span>
- <span class="c1">//$accent-color: #C38FD6;  // velvet
-</span> <span class="c1">//$accent-color: #8FD6B3;  // greenish
-</span> <span class="c1">//$accent-color: #35B4DE;  // bluish
-</span> <span class="c1">//$accent-color: #D2E354;  // yellowish
-</span> <span class="c1">// $accent-color: #52B54B;  // green
-</span> </code></pre></figure>
+<p>In other words: you can do anything you want with this theme on any site, just please<br />
+provide a link to the original theme on github.</p>
 
-<p>You can use one of them (just hover over the label to see accent color in action) or define your own!</p>
+<p>This theme includes the following files which are the properties of their<br />
+respective owners:</p>
 
-<p><span class="label" style="background-color:#C38FD6; color:#444444">#C38FD6</span>, <span class="label" style="background-color:#8FD6B3; color:#444444">#8FD6B3</span>, <span class="label" style="background-color:#35B4DE; color:#444444">#35B4DE</span>, <span class="label" style="background-color:#D2E354; color:#444444">#D2E354</span>, <span class="label" style="background-color:#52B54B; color:#444444">#52B54B</span>.</p>
-
-<script>
-  $('.label').hover(function(){
-    var color = $(this).text();
-    [].forEach.call($('a'), function(item) {
-      item.style.color = color
-    })
-  })
-</script>
-
-<style>
-  .label{
-    cursor: default;
-    border-radius: 5px;
-    padding: 5px 8px;
-  }
-</style>
-
-<h1 id="other-colors">Other colors</h1>
-
-<p>As Jekyll comes with support of SASS I put colors in variables. Here are the ones which could be easily changed:</p>
-
-<blockquote class="filename">
-  <p>theme.scss</p>
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$font-color</span><span class="p">:</span> <span class="mh">#dddddd</span><span class="p">;</span>
-<span class="nv">$background-color</span><span class="p">:</span> <span class="mh">#292929</span><span class="p">;</span>
-<span class="nv">$post-panel-color</span><span class="p">:</span> <span class="mh">#444</span><span class="p">;</span>
-<span class="nv">$footer-background-color</span><span class="p">:</span> <span class="mh">#292c2f</span><span class="p">;</span>
-<span class="nv">$note-color</span><span class="p">:</span> <span class="mh">#87CEFA</span><span class="p">;</span>
-<span class="nv">$warning-color</span><span class="p">:</span> <span class="mh">#ffff00</span><span class="p">;</span></code></pre></figure>
+<ul>
+  <li>js/bootstrap.min.js - <a href="http://getbootstrap.com">bootstrap</a></li>
+  <li>css/bootstrap.min.css - <a href="http://getbootstrap.com">bootstrap</a></li>
+  <li>js/jquery.min.js - <a href="https://jquery.com">jquery</a></li>
+</ul>
 
                     
-
-<div class="share-bar">
-  <ul class="share-buttons">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-  </ul>
-</div>
-
 
                   </div>
                   
@@ -166,15 +123,15 @@
   <h2>Recent Posts</h2>
   <ul>
     
-    <li><a href="/2016/12/02/jekyll-clean-theme.html">Jekyll Dark Clean Theme</a></li>
+    <li><a href="/2016/12/jekyll-clean-theme">Jekyll Dark Clean Theme</a></li>
     
-    <li><a href="/2016/11/03/text-formatting.html">Text formatting</a></li>
+    <li><a href="/2016/11/text-formatting">Text formatting</a></li>
     
-    <li><a href="/2016/10/02/code-syntax-highlighting.html">Code snippets</a></li>
+    <li><a href="/2016/10/code-syntax-highlighting">Code snippets</a></li>
     
-    <li><a href="/2016/09/21/customizations.html">Customizations</a></li>
+    <li><a href="/2016/09/customizations">Customizations</a></li>
     
-    <li><a href="/2016/09/16/be-social.html">Be social</a></li>
+    <li><a href="/2016/09/be-social">Be social</a></li>
     
   </ul>
 </div>
@@ -234,13 +191,29 @@
 <ul class="social-media">
 
   
+    <li>
+      <a title="screamwitch on Github" href="https://github.com/screamwitch" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    </li>
+  
 
+  
+    <li>
+      <a title=" on StackOverflow" href="https://stackoverflow.com/users/" target="_blank"><i class="fa fa-stack-overflow fa-2x"></i></a>
+    </li>
   
 
   
 
   
+    <li>
+      <a title=" on Instagram" href="https://instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+    </li>
+  
 
+  
+    <li>
+      <a title=" on Last.fm" href="https://www.lastfm.com/user/" target="_blank"><i class="fa fa-lastfm fa-2x"></i></a>
+    </li>
   
 
   
