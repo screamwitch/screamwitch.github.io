@@ -1,9 +1,11 @@
 ---
 layout: post
 title: JavaScript中的事件委托
+category: posts
 date: 2017-04-10
-excerpt: "懒癌晚期患者的第一篇——事件委托"
-tags: [ JavaScript ]
+description: "懒癌晚期患者的第一篇——事件委托"
+tags:
+    - JavaScript
 comments: true
 ---
 
