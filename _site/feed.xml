@@ -1,129 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>叫我大王</title>
-    <description></description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Apr 2017 16:48:21 +0800</pubDate>
-    <lastBuildDate>Tue, 11 Apr 2017 16:48:21 +0800</lastBuildDate>
-    <generator>Jekyll v3.4.0</generator>
-    
-      <item>
-        <title>Use my jekyll theme</title>
-        <description>&lt;h2 id=&quot;hints&quot;&gt;Hints&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-04-11T17:08:38+08:00</updated><id>/</id><title type="html">Cony</title><entry><title type="html">JavaScript中的事件委托</title><link href="/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" rel="alternate" type="text/html" title="JavaScript中的事件委托" /><published>2017-04-10T00:00:00+08:00</published><updated>2017-04-10T00:00:00+08:00</updated><id>/JavaScript中的事件委托</id><content type="html" xml:base="/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">&lt;h2 id=&quot;事件委托&quot;&gt;事件委托&lt;/h2&gt;
 
-&lt;p&gt;If you want to use my jekyll theme, follow the instructions and host it yourself. Easily setup as a Github page.&lt;/p&gt;
+&lt;p&gt;    事件，就是文档与浏览器窗口发生的一些特定的交互瞬间，像是点击（click）、加载（load）、鼠标进入（mouseenter）等。&lt;br /&gt;
+    委托，就是这件事我不做，我让别人帮我做。当然了，委托这种事除了自己的亲爹亲妈，别人才不会管你呢，所以事件委托必须是委托给父级元素。&lt;/p&gt;
 
-&lt;p&gt;To add pages (for example a portfolio, an extra about page, and so on), you need to link them to the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; manually. Required to configure in this dimensions is a bit of html and jekyll know-how. Reading the &lt;a href=&quot;http://jekyllrb.com/docs/pages/&quot;&gt;Jekyll docs&lt;/a&gt; could help. All other things are easy to edit and configure, even without much jekyll experience.&lt;/p&gt;
+&lt;h2 id=&quot;为什么要用事件委托&quot;&gt;为什么要用事件委托&lt;/h2&gt;
 
-&lt;h4 id=&quot;theme-features&quot;&gt;Theme features&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Projects showcase&lt;/li&gt;
-  &lt;li&gt;RSS and ATOM feed&lt;/li&gt;
-  &lt;li&gt;Blogpost pagination&lt;/li&gt;
-  &lt;li&gt;SEO meta tags, &lt;em&gt;schema.org&lt;/em&gt; structured data&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dev.twitter.com/cards/getting-started&quot;&gt;twitter&lt;/a&gt; cards&lt;/li&gt;
-  &lt;li&gt;made with MaterializeCSS&lt;/li&gt;
-  &lt;li&gt;Disqus comments&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;    那么各位老铁们就要问了，明明自己就能干的事，为啥要委托给别人？&lt;br /&gt;
+    且听我细细道来~&lt;br /&gt;
+    先看下面这段代码：&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;BWXmNY&quot; data-default-tab=&quot;js,result&quot; data-user=&quot;Conycony&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;未委托&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Conycony/pen/BWXmNY/&quot;&gt;未委托&lt;/a&gt; by Cony (&lt;a href=&quot;http://codepen.io/Conycony&quot;&gt;@Conycony&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
-&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+&lt;p&gt;    在上面的代码中，点击li标签，分别会执行不同的逻辑，分别用各自的点击事件来完成的。&lt;br /&gt;
+    在JavaScript中，每一个函数都是对象，都会占用内存；内存中的对象越多，页面的性能就越差。在实际开发中，可能会有人给每个按钮都添加一个onclick事件，如果像这样不分青红皂白的向页面中添加大量的处理程序，就会影响页面的性能。&lt;br /&gt;
+    那么，类似的逻辑要怎么提升页面的性能呢？对“事件处理程序过多”问题的解决方案，就是&lt;strong&gt;事件委托&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;h3 id=&quot;1-get-the-sources&quot;&gt;1. Get the sources&lt;/h3&gt;
+&lt;h2 id=&quot;原生js中的事件委托&quot;&gt;原生js中的事件委托&lt;/h2&gt;
+&lt;p&gt;    上面的代码可以利用事件委托来进行修改：&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;YZmrNz&quot; data-default-tab=&quot;js,result&quot; data-user=&quot;Conycony&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;原生js事件委托&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Conycony/pen/YZmrNz/&quot;&gt;原生js事件委托&lt;/a&gt; by Cony (&lt;a href=&quot;http://codepen.io/Conycony&quot;&gt;@Conycony&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;11-clone&quot;&gt;1.1 Clone&lt;/h4&gt;
+&lt;p&gt;    在这段代码里，我们将事件委托给了li的父级元素ul，也就是#list，由于所有的li元素都是#list的子节点，而且它们的事件会&lt;strong&gt;冒泡&lt;/strong&gt;（肯定有人会问什么是冒泡，好的，下一篇就写事件冒泡），所以每个li元素的点击事件最终都会被#list的点击函数处理。在这个函数中，我们通过获取&lt;strong&gt;事件源e.target&lt;/strong&gt;的id，并用switch语句检测事件源id，来决定当前的点击事件要执行什么逻辑。以上就构成了原生js的事件委托。&lt;/p&gt;
 
-&lt;p&gt;Clone the repository from github:&lt;br /&gt;
-&lt;a href=&quot;https://github.com/lukas-h/material-theme.git&quot;&gt;https://github.com/lukas-h/material-theme.git&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;事件委托更为重要的作用&quot;&gt;事件委托更为重要的作用&lt;/h2&gt;
+&lt;p&gt;    肯定有老铁发现过以下问题：&lt;/p&gt;
 
-&lt;h4 id=&quot;12-or-download&quot;&gt;1.2 or download&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/lukas-h/material-theme/archive/gh-pages.zip&quot;&gt;https://github.com/lukas-h/material-theme/archive/gh-pages.zip&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-configure&quot;&gt;2. Configure&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Replace all the configuration in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;_data/projects.yml&lt;/code&gt; by your own data. Change the name, email address, configure your your language settings.&lt;br /&gt;
-And most important: change the site’s URL! Optionally add your google analytics ID.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Put your address and legal info into &lt;code class=&quot;highlighter-rouge&quot;&gt;imprint.html&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Change the icon &lt;code class=&quot;highlighter-rouge&quot;&gt;images/favicon.png&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Replace the domain name in the &lt;code class=&quot;highlighter-rouge&quot;&gt;robots.txt&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Don’t forget the &lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-start-writing-posts&quot;&gt;3. Start writing posts&lt;/h3&gt;
-&lt;p&gt;Replace the existing example post and then add your own!&lt;br /&gt;
-Have a look at the &lt;a href=&quot;http://jekyllrb.com/docs/posts/&quot;&gt;Jekyll docs&lt;/a&gt;
-about how to write blog posts.&lt;br /&gt;
-To add tags to your posts, look into the example, you’ll see that there is
-a line starting with &lt;code class=&quot;highlighter-rouge&quot;&gt;tags:&lt;/code&gt;. Add your keywords there.&lt;/p&gt;
-
-&lt;h3 id=&quot;4-youre-done&quot;&gt;4. You’re done&lt;/h3&gt;
-&lt;p&gt;Take a stop on the Github project page. Feel free to give a star and share it with others!&lt;br /&gt;
-You have questions, feedback or something to improve, mail me or open issues on github. Contributions are always welcome.&lt;br /&gt;
-Thanks to them who have already &lt;a href=&quot;https://github.com/lukas-h/material-theme/graphs/contributors&quot;&gt;helped&lt;/a&gt; to improve, especially &lt;a href=&quot;https://github.com/varundey&quot;&gt;@varundey&lt;/a&gt;!&lt;br /&gt;
-See the &lt;a href=&quot;https://github.com/lukas-h/material-theme&quot;&gt;Github Project&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 20 Sep 2016 04:10:00 +0800</pubDate>
-        <link>http://localhost:4000/use-my-jekyll-theme</link>
-        <guid isPermaLink="true">http://localhost:4000/use-my-jekyll-theme</guid>
-        
-        <category>english</category>
-        
-        <category>jekyll</category>
-        
-        <category>theme</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Markdown flavour</title>
-        <description>&lt;p&gt;I have some text.&lt;/p&gt;
-
-&lt;p&gt;I want some &lt;em&gt;italics&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;I want some &lt;strong&gt;bold&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;this-is-heading-1&quot;&gt;this is heading 1&lt;/h1&gt;
-
-&lt;h2 id=&quot;this-is-heading-2&quot;&gt;this is heading 2&lt;/h2&gt;
-
-&lt;h3 id=&quot;this-is-heading-3&quot;&gt;this is heading 3&lt;/h3&gt;
-
-&lt;p&gt;you want a list?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;first&lt;/li&gt;
-  &lt;li&gt;second&lt;/li&gt;
-  &lt;li&gt;third&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;you want an ordered list?&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
+  &lt;li&gt;js动态生成的元素绑定事件无效；&lt;/li&gt;
+  &lt;li&gt;元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-        <pubDate>Mon, 19 Sep 2016 06:00:00 +0800</pubDate>
-        <link>http://localhost:4000/welcome</link>
-        <guid isPermaLink="true">http://localhost:4000/welcome</guid>
-        
-        <category>example</category>
-        
-        <category>welcome</category>
-        
-        
-      </item>
-    
-  </channel>
-</rss>
+
+&lt;p&gt;    遇到上面的问题，有些老铁可能就会懵了，这是为什么呢？&lt;br /&gt;
+    这是因为事件绑定只对dom中存在的元素有效，对于我们后来动态增加的元素是监测不到，所以绑定不了。&lt;br /&gt;
+    同样，当你使用var aa = document.getElementsByTagName(“动态生成的元素”);来获取动态生成的元素的时候也是获取不到的，因为网页只会执行一次初始化绑定，之后动态生成的dom元素也是监测不到的。&lt;br /&gt;
+    针对这个问题，解决的办法有以下两种：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;生成元素的同时就绑定事件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;WpVamM&quot; data-default-tab=&quot;result&quot; data-user=&quot;Conycony&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;未来元素绑定事件&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/Conycony/pen/WpVamM/&quot;&gt;未来元素绑定事件&lt;/a&gt; by Cony (&lt;a href=&quot;http://codepen.io/Conycony&quot;&gt;@Conycony&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;使用事件委托&lt;br /&gt;
+jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'非动态父级元素'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;动态元素&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){});&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//给“动态元素”绑定事件，事件委托给非动态生成的父级元素&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;    最后再放一个例子吧，这个例子中的元素class是js动态改变的，改变后绑定事件使用了事件委托。
+&lt;a href=&quot;http://codepen.io/Conycony/pen/rywOze&quot;&gt;点我，我就是例子&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;</content><category term="JavaScript" /><summary type="html">懒癌晚期患者的第一篇——事件委托</summary></entry></feed>

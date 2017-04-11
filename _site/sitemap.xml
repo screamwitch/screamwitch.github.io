@@ -1,35 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>http://localhost:4000/use-my-jekyll-theme</loc>
-    
-    <lastmod>2016-09-20T04:10:00+08:00</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/welcome</loc>
-    
-    <lastmod>2016-09-19T06:00:00+08:00</lastmod>
-    
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+<url>
+<loc>/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</loc>
+<lastmod>2017-04-10T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>/404</loc>
+</url>
+<url>
+<loc>/</loc>
+</url>
+<url>
+<loc>/tags/</loc>
+</url>
+<url>
+<loc>/projects/</loc>
+</url>
+<url>
+<loc>/posts/</loc>
+</url>
+<url>
+<loc>/about/</loc>
+</url>
 </urlset>
