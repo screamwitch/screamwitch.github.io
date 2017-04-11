@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cony</title>
+    <title>叫我大王</title>
     <description></description>
-    <link>https://screamwitch.github.io/</link>
-    <atom:link href="https://screamwitch.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Apr 2017 18:02:38 +0800</pubDate>
-    <lastBuildDate>Tue, 11 Apr 2017 18:02:38 +0800</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 11 Apr 2017 18:19:45 +0800</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 18:19:45 +0800</lastBuildDate>
+    <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>JavaScript中的事件委托</title>
@@ -68,8 +68,8 @@ jquery中使用on方法进行事件绑定时，接收的第一个参数event是�
 &lt;p&gt;&lt;a href=&quot;https://screamwitch.github.io&quot;&gt;回到拉萨&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Apr 2017 00:00:00 +0800</pubDate>
-        <link>https://screamwitch.github.io/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
-        <guid isPermaLink="true">https://screamwitch.github.io/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</guid>
+        <link>http://localhost:4000/2017/04/10/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/10/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.html</guid>
         
         <category>JavaScript</category>
         
@@ -118,8 +118,8 @@ the special word &lt;code class=&quot;highlighter-rouge&quot;&gt;?link?&lt;/code
 &lt;p&gt;If you have a problem, &lt;a href=&quot;https://github.com/kkninjae/book/issues&quot;&gt;github issue is ready&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Fri, 28 Aug 2015 00:00:00 +0800</pubDate>
-        <link>https://screamwitch.github.io/jekyll-theme-book/</link>
-        <guid isPermaLink="true">https://screamwitch.github.io/jekyll-theme-book/</guid>
+        <link>http://localhost:4000/blog/2015/08/28/jekyll-theme-book.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/08/28/jekyll-theme-book.html</guid>
         
         <category>english</category>
         
@@ -186,8 +186,8 @@ if __name__ == '__main__':
 &lt;p&gt;Est inani prodesset ex. Eu reque perfecto consulatu vix, omnes concludaturque eum an. Detraxit consequuntur per eu, virtute atomorum voluptatibus mei ei. Tamquam vituperatoribus et vis, quo in copiosae apeirian.&lt;/p&gt;
 </description>
         <pubDate>Fri, 28 Aug 2015 00:00:00 +0800</pubDate>
-        <link>https://screamwitch.github.io/book-style-doc/</link>
-        <guid isPermaLink="true">https://screamwitch.github.io/book-style-doc/</guid>
+        <link>http://localhost:4000/blog/2015/08/28/book-style-doc.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/08/28/book-style-doc.html</guid>
         
         <category>english</category>
         
