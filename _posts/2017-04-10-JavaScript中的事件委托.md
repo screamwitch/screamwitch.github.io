@@ -46,6 +46,7 @@ comments: true
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 2. 使用事件委托  
 jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：  
+<div class="env-header">JavaScript</div>
 {% highlight html linenos %}
 $('非动态父级元素').on("click","动态元素",function(){});
 //给“动态元素”绑定事件，事件委托给非动态生成的父级元素
