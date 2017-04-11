@@ -1,83 +1,82 @@
-# Site
-title:              Cony
-bio:                '叫我大王'
-description:        #"Moon is a minimal, one column jekyll theme for your blog."
-reading_time:       true
-words_per_minute:   200
-logo:               'assets/img/logo.png'
-background:         'assets/img/placeholder-big.jpg'
-tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
-locale:             en_US
-url:                https://screamwitch.github.io
 
-# Jekyll
-permalink:          /:title/
-markdown:           kramdown
-highlighter:        null
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
+##########################################
+#     Change these variables !important
+##########################################
+
+# Set this for Copyright in the footer
+owner: Cony
+
+# Optional quote in the footer
+# To disable set enable to false
+quote:
+  enable: true
+  quote: Some fancy quote
+  author: Cony
+
+# Set this to your main site title. If page doesn't have its own title,
+# then this title will be used.
+title: '叫我大王'
+
+
+# Following needed for disqus integration
+# Set your 'disqus' account name
+disqus:
+
+# Uncomment if deployed locally
+#url: https://localhost:4000
+
+# Set your host if deployed not locally
+# For example "https://yourGitHub.github.io"
+url:https://screamwitch.github.io
+
+# Change this to your base URL starting with forward slash if site is in gh-pages branch
+# For example /branchName
+# NOTE! only change if site is NOT in master's branch
+baseurl:
+
+# Change this to your google analytics ID
+google_analytics:
+
+# Contact form pupublic key
+contact_PK:
+
+##########################################
+#          Optional variables
+##########################################
+
+# Set maximum posts per page
+paginate: 5
+
+# Set permalink
+permalink: /:categories/:title
+
+# MathJax support
+math: true
+
+collections:
+- definitions
+
+##########################################
+#          Do not change these variables
+##########################################
+
+include:
+  - _pages
+
 sass:
-  sass_dir:         _sass
-  style:            compressed
+  sass_dir: _sass
+sass:
+    style: compressed
 
-# Comments
-disqus_shortname:   taylantatli
-
-# Social
-# if you don't have any of social below, comment the line.
-#google:
-  #plus:            #username
-  #analytics:
-  #verify:
-  #ad-client:
-  #ad-slot:
-#bing-verify:
-#email:
-#twitter:            username
-#facebook:           username
-github-url:         screamwitch
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
-#xing:              username
-#instagram:          username
-#lastfm:            username
-#tumblr:            username
-#medium:            '@username'
-#pinterest:         username
-#foursquare:        username
-#steam:              username
-#dribbble:          username
-#youtube:           username
-#youtube-channel:   channel
-#soundcloud:        username
-weibo:             katharine0325
-#flickr:            username
-codepen:           Conycony
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
-
-# Gems
 gems:
-  - jekyll-mentions
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap # add /sitemap.xml file
 
-jekyll-mentions:
-    base_url: https://github.com
+paginate_path: /_pages/page:num
 
-# Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
-
-comments :
-  provider : duoshuo
-  duoshuo :
-    short_name : conycony
-  disqus :
-      short_name : conycony
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+github-url:         screamwitch
+codepen:           Conycony
