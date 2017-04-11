@@ -1,83 +1,29 @@
-# Site
-title:              Cony
-bio:                '叫我大王'
-description:        #"Moon is a minimal, one column jekyll theme for your blog."
-reading_time:       true
-words_per_minute:   200
-logo:               'assets/img/logo.png'
-background:         'assets/img/placeholder-big.jpg'
-tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
-locale:             en_US
-url:                https://screamwitch.github.io
+title: 叫我大王
+description: 
+url: https://screamwitch.github.io
+avatar: # path/to/avatar for index page. e.g. /assets/img/avatar.jpg
+favicon: # path/to/favicon for site. e.g. /assets/img/favicon.ico
+google_analytics: # google analytics id
+disqus_shortname: # disqus_shortname for disqus comment system
 
-# Jekyll
-permalink:          /:title/
-markdown:           kramdown
-highlighter:        null
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
-sass:
-  sass_dir:         _sass
-  style:            compressed
+# Content for about page.
+# Each paragraph will be a <p> tag which is inserted to about
+# page. text_align is used to align the text. Default is left.
+# Other two values are center and right. If there are some links
+# in your paragraph, use '?link?' to take the place of a link.
+# And then write the real link under links. name is the link
+# text. url is the link. when external is set as true, then
+# a new whidow will be open when link is clicked.
+#
+about:
+  - paragraph: ?link?, a simple Jekyll theme. Built by ?link?
+    text_align: center
+    links:
+      - name: Book
+        url: https://github.com/kkninjae/book
+        external: true
+      - name: Lang Liu
+        url: http://kkninjae.com/about/
+        external: false
 
-# Comments
-disqus_shortname:   taylantatli
-
-# Social
-# if you don't have any of social below, comment the line.
-#google:
-  #plus:            #username
-  #analytics:
-  #verify:
-  #ad-client:
-  #ad-slot:
-#bing-verify:
-#email:
-#twitter:            username
-#facebook:           username
-github-url:         screamwitch
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
-#xing:              username
-#instagram:          username
-#lastfm:            username
-#tumblr:            username
-#medium:            '@username'
-#pinterest:         username
-#foursquare:        username
-#steam:              username
-#dribbble:          username
-#youtube:           username
-#youtube-channel:   channel
-#soundcloud:        username
-weibo:             katharine0325
-#flickr:            username
-codepen:           Conycony
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
-
-# Gems
-gems:
-  - jekyll-mentions
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
-
-jekyll-mentions:
-    base_url: https://github.com
-
-# Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
-
-comments :
-  provider : duoshuo
-  duoshuo :
-    short_name : conycony
-  disqus :
-      short_name : conycony
+    
