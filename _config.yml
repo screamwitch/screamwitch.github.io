@@ -10,12 +10,12 @@ owner: Cony
 # To disable set enable to false
 quote:
   enable: true
-  quote: Some fancy quote
-  author: Cony
+  quote: 读不在三更五鼓，功只怕一曝十寒！
+  author: #Cony
 
 # Set this to your main site title. If page doesn't have its own title,
 # then this title will be used.
-title: '叫我大王'
+bio: '叫我大王'
 
 
 # Following needed for disqus integration

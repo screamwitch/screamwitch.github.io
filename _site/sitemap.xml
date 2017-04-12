@@ -13,6 +13,9 @@
 <lastmod>2017-04-10T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/tags/JavaScript</loc>
+</url>
+<url>
 <loc>http://localhost:4000/pages/about</loc>
 </url>
 <url>
@@ -26,6 +29,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/lorem</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/posts</loc>
 </url>
 <url>
 <loc>http://localhost:4000/pages/thankyou</loc>
