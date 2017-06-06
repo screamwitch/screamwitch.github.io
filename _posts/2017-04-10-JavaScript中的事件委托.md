@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript中的事件委托
-category: posts
+category: 技术文档
 date: 2017-04-10
 description: "懒癌晚期患者的第一篇——事件委托"
 tags:
@@ -35,18 +35,18 @@ comments: true
 ## 事件委托更为重要的作用
 &nbsp;&nbsp;&nbsp;&nbsp;肯定有老铁发现过以下问题： 
 
-1. js动态生成的元素绑定事件无效；
-2. 元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。
+**1.js动态生成的元素绑定事件无效；  
+2.元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。**
 
 &nbsp;&nbsp;&nbsp;&nbsp;遇到上面的问题，有些老铁可能就会懵了，这是为什么呢？  
 &nbsp;&nbsp;&nbsp;&nbsp;这是因为事件绑定只对dom中存在的元素有效，对于我们后来动态增加的元素是监测不到，所以绑定不了。  
 &nbsp;&nbsp;&nbsp;&nbsp;同样，当你使用var aa = document.getElementsByTagName("动态生成的元素");来获取动态生成的元素的时候也是获取不到的，因为网页只会执行一次初始化绑定，之后动态生成的dom元素也是监测不到的。  
 &nbsp;&nbsp;&nbsp;&nbsp;针对这个问题，解决的办法有以下两种：  
 
-1. 生成元素的同时就绑定事件：
+**1.生成元素的同时就绑定事件**
 <p data-height="265" data-theme-id="0" data-slug-hash="WpVamM" data-default-tab="result" data-user="Conycony" data-embed-version="2" data-pen-title="未来元素绑定事件" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/WpVamM/">未来元素绑定事件</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-2. 使用事件委托  
+**2.使用事件委托**  
 jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：  
 <div class="env-header">JavaScript</div>
 {% highlight js linenos %}

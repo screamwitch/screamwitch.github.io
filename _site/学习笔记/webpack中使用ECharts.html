@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>webpack中使用ECharts &#8211; 叫我大王</title>
+    
+    <meta name="description" content="只有学习能让我快乐！"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/resources/css/main.css"/>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    
+</head>
+<body style="background: url('/resources/images/main_front.jpg') no-repeat fixed;
+                            background-size: cover">
+<div id="wrapper">
+    <header>
+    <nav id="main-nav">
+        <ul>
+            <li style="float: left;"><a class="fancy-nav" style="font-weight: bolder;" href="#">Learn and live!</a></li>
+            <li><a class="fancy-nav" href="/index.html">home</a></li>
+            
+            <li><a class="fancy-nav" href="/categories/example">example</a></li>
+            
+            <li><a class="fancy-nav" href="/categories/技术文档">技术文档</a></li>
+            
+            <li><a class="fancy-nav" href="/categories/学习笔记">学习笔记</a></li>
+            
+            <li><a class="fancy-nav" href="/pages/about.html">about</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main id="start">
+        <div class="articles">
+            <article>
+    <header>
+        
+        <h1>webpack中使用ECharts</h1>  <div class="post-meta">
+    <small>
+        <time datetime="06 06 2017">
+            06 June, 2017
+        </time>
+        <span class="tag-sep"> | </span>
+        
+        <a class="comment_count" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/webpack%E4%B8%AD%E4%BD%BF%E7%94%A8ECharts#disqus_thread"
+           data-disqus-identifier="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/webpack中使用ECharts"></a>
+        <span class="tag-sep"> | </span>
+        
+        <nav class="tags">
+    <ul>
+        
+        <li><a href="/tags/框架.html">框架</a><span>&nbsp;&nbsp;</span></li>
+        
+    </ul>
+</nav>
+
+    </small>
+</div>
+
+    </header>
+    <h2 id="npm安装echarts">npm安装ECharts</h2>
+
+<blockquote>
+  <p>npm install echrats –save</p>
+</blockquote>
+
+<h2 id="引入echarts">引入ECharts</h2>
+<p>通过 npm 上安装的 ECharts 和 zrender 会放在node_modules目录下。可以直接在项目代码中 require(‘echarts’) 得到 ECharts。</p>
+
+<div class="env-header">JavaScript</div>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">echarts</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'echarts'</span><span class="p">);</span>
+
+<span class="c1">// 基于准备好的dom，初始化echarts实例</span>
+<span class="kd">var</span> <span class="nx">myChart</span> <span class="o">=</span> <span class="nx">echarts</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'main'</span><span class="p">));</span>
+<span class="c1">// 绘制图表</span>
+<span class="nx">myChart</span><span class="p">.</span><span class="nx">setOption</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s1">'ECharts 入门示例'</span> <span class="p">},</span>
+    <span class="na">tooltip</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">xAxis</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="s2">"衬衫"</span><span class="p">,</span><span class="s2">"羊毛衫"</span><span class="p">,</span><span class="s2">"雪纺衫"</span><span class="p">,</span><span class="s2">"裤子"</span><span class="p">,</span><span class="s2">"高跟鞋"</span><span class="p">,</span><span class="s2">"袜子"</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="na">yAxis</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">series</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="s1">'销量'</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+    <span class="p">}]</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="按需引入echarts图标和组件">按需引入ECharts图标和组件</h2>
+<p>默认使用 require(‘echarts’) 得到的是已经加载了所有图表和组件的 ECharts 包，因此体积会比较大，如果在项目中对体积要求比较苛刻，也可以只按需引入需要的模块。
+例如上面示例代码中只用到了柱状图，提示框和标题组件，因此在引入的时候也只需要引入这些模块，可以有效的将打包后的体积从 400 多 KB 减小到 170 多 KB。</p>
+<div class="env-header">JavaScript</div>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td class="code"><pre><span class="c1">// 引入 ECharts 主模块</span>
+<span class="kd">var</span> <span class="nx">echarts</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'echarts/lib/echarts'</span><span class="p">);</span>
+<span class="c1">// 引入柱状图</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'echarts/lib/chart/bar'</span><span class="p">);</span>
+<span class="c1">// 引入提示框和标题组件</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'echarts/lib/component/tooltip'</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'echarts/lib/component/title'</span><span class="p">);</span>
+
+<span class="c1">// 基于准备好的dom，初始化echarts实例</span>
+<span class="kd">var</span> <span class="nx">myChart</span> <span class="o">=</span> <span class="nx">echarts</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'main'</span><span class="p">));</span>
+<span class="c1">// 绘制图表</span>
+<span class="nx">myChart</span><span class="p">.</span><span class="nx">setOption</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="p">{</span> <span class="na">text</span><span class="p">:</span> <span class="s1">'ECharts 入门示例'</span> <span class="p">},</span>
+    <span class="na">tooltip</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">xAxis</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="s2">"衬衫"</span><span class="p">,</span><span class="s2">"羊毛衫"</span><span class="p">,</span><span class="s2">"雪纺衫"</span><span class="p">,</span><span class="s2">"裤子"</span><span class="p">,</span><span class="s2">"高跟鞋"</span><span class="p">,</span><span class="s2">"袜子"</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="na">yAxis</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">series</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="s1">'销量'</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+    <span class="p">}]</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>可以按需引入的模块列表见<a href="https://github.com/ecomfe/echarts/blob/master/index.js">https://github.com/ecomfe/echarts/blob/master/index.js</a></p>
+
+<p><a href="https://screamwitch.github.io">回到拉萨</a></p>
+
+    <footer style="margin-top: 40px;border-top: 1px solid #CFD8DC;">
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: 'webpack中使用ECharts',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+         <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_developer = 1;
+    var disqus_config = function () {
+        this.page.url = 'http://localhost:4000/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/webpack%E4%B8%AD%E4%BD%BF%E7%94%A8ECharts';
+        this.page.identifier = '/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/webpack中使用ECharts';
+        this.page.title = "webpack中使用ECharts";
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> 
+    </footer>
+</article>
+
+        </div>
+
+    </main>
+        <nav class="paginator">
+    <ul>
+        
+        
+        <li><a class="fancy-nav" href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B">&lt;&nbsp;Prev</a></li>
+        
+        <li class="sep">&nbsp;</li>
+        <li><a class="fancy-nav" href="#">Top</a></li>
+        <li class="sep">&nbsp;</li>
+        
+        
+    </ul>
+</nav>
+
+    <footer>
+        
+<blockquote id="footer-quote">
+    <p>
+        
+        读不在三更五鼓，功只怕一曝十寒！
+        
+    </p>
+    <footer>
+        <cite>
+        
+        - 
+        
+    </cite>
+    </footer>
+</blockquote>
+
+<div id="footer-main">
+    <small>
+        &copy; 2016 Cony. ALL RIGHTS RESERVED.
+    </small>
+</div>
+
+    </footer>
+</div>
+
+</body>
+</html>

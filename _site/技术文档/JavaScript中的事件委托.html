@@ -26,7 +26,9 @@
             
             <li><a class="fancy-nav" href="/categories/example">example</a></li>
             
-            <li><a class="fancy-nav" href="/categories/posts">posts</a></li>
+            <li><a class="fancy-nav" href="/categories/技术文档">技术文档</a></li>
+            
+            <li><a class="fancy-nav" href="/categories/学习笔记">学习笔记</a></li>
             
             <li><a class="fancy-nav" href="/pages/about.html">about</a></li>
         </ul>
@@ -45,8 +47,8 @@
         </time>
         <span class="tag-sep"> | </span>
         
-        <a class="comment_count" href="/posts/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98#disqus_thread"
-           data-disqus-identifier="/posts/JavaScript中的事件委托"></a>
+        <a class="comment_count" href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98#disqus_thread"
+           data-disqus-identifier="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/JavaScript中的事件委托"></a>
         <span class="tag-sep"> | </span>
         
         <nav class="tags">
@@ -88,26 +90,20 @@
 <h2 id="事件委托更为重要的作用">事件委托更为重要的作用</h2>
 <p>    肯定有老铁发现过以下问题：</p>
 
-<ol>
-  <li>js动态生成的元素绑定事件无效；</li>
-  <li>元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。</li>
-</ol>
+<p><strong>1.js动态生成的元素绑定事件无效；<br />
+2.元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。</strong></p>
 
 <p>    遇到上面的问题，有些老铁可能就会懵了，这是为什么呢？<br />
     这是因为事件绑定只对dom中存在的元素有效，对于我们后来动态增加的元素是监测不到，所以绑定不了。<br />
     同样，当你使用var aa = document.getElementsByTagName(“动态生成的元素”);来获取动态生成的元素的时候也是获取不到的，因为网页只会执行一次初始化绑定，之后动态生成的dom元素也是监测不到的。<br />
     针对这个问题，解决的办法有以下两种：</p>
 
-<ol>
-  <li>生成元素的同时就绑定事件：</li>
-</ol>
+<p><strong>1.生成元素的同时就绑定事件</strong></p>
 <p data-height="265" data-theme-id="0" data-slug-hash="WpVamM" data-default-tab="result" data-user="Conycony" data-embed-version="2" data-pen-title="未来元素绑定事件" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/WpVamM/">未来元素绑定事件</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<ol>
-  <li>使用事件委托<br />
-jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：</li>
-</ol>
+<p><strong>2.使用事件委托</strong><br />
+jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：</p>
 <div class="env-header">JavaScript</div>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
@@ -121,7 +117,7 @@ jquery中使用on方法进行事件绑定时，接收的第一个参数event是�
 
 <p><a href="https://screamwitch.github.io">回到拉萨</a></p>
 
-    <footer>
+    <footer style="margin-top: 40px;border-top: 1px solid #CFD8DC;">
         <div id="container"></div>
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -145,8 +141,8 @@ jquery中使用on方法进行事件绑定时，接收的第一个参数event是�
      */
     var disqus_developer = 1;
     var disqus_config = function () {
-        this.page.url = 'http://localhost:4000/posts/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98';
-        this.page.identifier = '/posts/JavaScript中的事件委托';
+        this.page.url = 'http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98';
+        this.page.identifier = '/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/JavaScript中的事件委托';
         this.page.title = "JavaScript中的事件委托";
     };
     (function() { // DON'T EDIT BELOW THIS LINE
@@ -174,6 +170,8 @@ jquery中使用on方法进行事件绑定时，接收的第一个参数event是�
         <li class="sep">&nbsp;</li>
         <li><a class="fancy-nav" href="#">Top</a></li>
         <li class="sep">&nbsp;</li>
+        
+        <li><a class="fancy-nav" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%88%9D%E8%AF%86angularJS">Next&nbsp;&gt;</a></li>
         
         
     </ul>
