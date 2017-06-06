@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript中的事件委托</title>
+    
+    <meta name="description" content="懒癌晚期患者的第一篇——事件委托"> 
+    <meta name="author" content="叫我大王">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+    <nav class="navbar navbar-default visible-xs" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button> 
+            <a type="button" class="navbar-toggle nav-link" href="http://github.com/screamwitch">
+                <i class="fa fa-github"></i>
+            </a>
+              
+            <a class="navbar-brand" href="/">
+                <img src="//www.gravatar.com/avatar/?s=35" class="img-circle" /> 叫我大王
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/categories.html">Categories</a></li>
+                <li><a href="/tags.html">Tags</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <!-- nav-menu-dropdown -->
+    <div class="btn-group hidden-xs" id="nav-menu">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+            <li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+        </ul>
+    </div>
+
+    <div class="col-sm-3 sidebar hidden-xs" style="">
+        <!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+    <a href="/">
+        <img width=150 src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-circle" />
+    </a>
+    <h3 class="title">
+        <a href="/">叫我大王</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+    读不在三更五鼓，功只怕一曝十寒！
+</div>
+
+
+<div id="contact-list" class="text-center">
+    <ul class="list-unstyled list-inline">
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://github.com/screamwitch" target="_blank">
+                <i class="fa fa-github-alt fa-lg"></i>
+            </a>
+        </li>
+         
+        <li>
+            <a class="btn btn-default btn-sm" href="https://codepen.io/Conycony" target="_blank">
+                <i class="fa fa-codepen fa-lg"></i>
+            </a>
+        </li>
+         
+    </ul>
+    <!--<ul id="contact-list-secondary" class="list-unstyled list-inline">
+         
+        <li>
+            <a class="btn btn-default btn-sm" href="/feed.xml">
+                <i class="fa fa-rss fa-lg"></i>
+            </a>
+        </li>
+    </ul>-->
+</div>
+<!-- sidebar.html end -->
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3">
+        <div class="page-header">
+    <h1>JavaScript中的事件委托 </h1>
+</div>
+
+<article>
+
+    <div class="col-sm-10">
+        <span class="post-date">
+	   
+	   April 
+	   10th,
+	   
+	   2017
+	 </span>
+        <div class="article_body">
+            <h2 id="事件委托">事件委托</h2>
+
+<p>    事件，就是文档与浏览器窗口发生的一些特定的交互瞬间，像是点击（click）、加载（load）、鼠标进入（mouseenter）等。<br />
+    委托，就是这件事我不做，我让别人帮我做。当然了，委托这种事除了自己的亲爹亲妈，别人才不会管你呢，所以事件委托必须是委托给父级元素。</p>
+
+<h2 id="为什么要用事件委托">为什么要用事件委托</h2>
+
+<p>    那么各位老铁们就要问了，明明自己就能干的事，为啥要委托给别人？<br />
+    且听我细细道来~<br />
+    先看下面这段代码：</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="BWXmNY" data-default-tab="js,result" data-user="Conycony" data-embed-version="2" data-pen-title="未委托" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/BWXmNY/">未委托</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>    在上面的代码中，点击li标签，分别会执行不同的逻辑，分别用各自的点击事件来完成的。<br />
+    在JavaScript中，每一个函数都是对象，都会占用内存；内存中的对象越多，页面的性能就越差。在实际开发中，可能会有人给每个按钮都添加一个onclick事件，如果像这样不分青红皂白的向页面中添加大量的处理程序，就会影响页面的性能。<br />
+    那么，类似的逻辑要怎么提升页面的性能呢？对“事件处理程序过多”问题的解决方案，就是<strong>事件委托</strong>。</p>
+
+<h2 id="原生js中的事件委托">原生js中的事件委托</h2>
+<p>    上面的代码可以利用事件委托来进行修改：</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="YZmrNz" data-default-tab="js,result" data-user="Conycony" data-embed-version="2" data-pen-title="原生js事件委托" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/YZmrNz/">原生js事件委托</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>    在这段代码里，我们将事件委托给了li的父级元素ul，也就是#list，由于所有的li元素都是#list的子节点，而且它们的事件会<strong>冒泡</strong>（肯定有人会问什么是冒泡，好的，下一篇就写事件冒泡），所以每个li元素的点击事件最终都会被#list的点击函数处理。在这个函数中，我们通过获取<strong>事件源e.target</strong>的id，并用switch语句检测事件源id，来决定当前的点击事件要执行什么逻辑。以上就构成了原生js的事件委托。</p>
+
+<h2 id="事件委托更为重要的作用">事件委托更为重要的作用</h2>
+<p>    肯定有老铁发现过以下问题：</p>
+
+<p><strong>1.js动态生成的元素绑定事件无效；<br />
+2.元素的class是js动态设置的，通过这个class选择器获取到这个元素后绑定事件失效。</strong></p>
+
+<p>    遇到上面的问题，有些老铁可能就会懵了，这是为什么呢？<br />
+    这是因为事件绑定只对dom中存在的元素有效，对于我们后来动态增加的元素是监测不到，所以绑定不了。<br />
+    同样，当你使用var aa = document.getElementsByTagName(“动态生成的元素”);来获取动态生成的元素的时候也是获取不到的，因为网页只会执行一次初始化绑定，之后动态生成的dom元素也是监测不到的。<br />
+    针对这个问题，解决的办法有以下两种：</p>
+
+<p><strong>1.生成元素的同时就绑定事件</strong></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="WpVamM" data-default-tab="result" data-user="Conycony" data-embed-version="2" data-pen-title="未来元素绑定事件" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/WpVamM/">未来元素绑定事件</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p><strong>2.使用事件委托</strong><br />
+jquery中使用on方法进行事件绑定时，接收的第一个参数event是事件，第二个是可选参数selector，如果添加了selector这个参数，就构成了事件委托，如下：<br />
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'非动态父级元素'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="s2">"动态元素"</span><span class="p">,</span><span class="kd">function</span><span class="p">(){});</span>
+<span class="c1">//给“动态元素”绑定事件，事件委托给非动态生成的父级元素</span></code></pre></figure>
+
+<p>    最后再放一个例子吧，这个例子中的元素class是js动态改变的，改变后绑定事件使用了事件委托。<a href="http://codepen.io/Conycony/pen/rywOze">点我，我就是例子</a></p>
+
+
+        </div>
+
+        
+        <ul class="tag_box list-unstyled list-inline">
+            <li><i class="fa fa-folder-open"></i></li>
+              
+            <li><a href="/categories.html#技术文档-ref">
+					技术文档 <span>(2)</span>
+					
+				</a></li>
+             
+        </ul>
+         
+        <ul class="list-inline">
+            <li><i class="fa fa-tags"></i></li>
+              
+            <li>
+                <a href="/tags.html#JavaScript-ref">
+					JavaScript <span>(2)</span>
+					
+					</a>
+            </li>
+              
+        </ul>
+        
+
+        <hr>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: 'JavaScript中的事件委托',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+
+        <div>
+            <!--<section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=JavaScript中的事件委托"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>-->
+
+            <section class="col-sm-10 author">
+                <img style=" width:100px; border-radius:50%" src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-rounded author-image" />
+                <h4 class="section-title author-name">叫我大王</h4>
+                <p class="author-bio">读不在三更五鼓，功只怕一曝十寒！</p>
+            </section>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <ul class="pager">
+            
+            <li class="previous"><a href="/general/setup/demo/2013/11/15/hello-world.html" title="Hello World!">&larr; Previous</a></li>
+             
+            <li class="next"><a href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2017/04/10/%E5%88%9D%E8%AF%86angularJS.html" title="初识angularJS-学习笔记">Next &rarr;</a></li>
+            
+        </ul>
+
+        <hr>
+    </div>
+
+    <div class="col-sm-2 sidebar-2">
+
+    </div>
+</article>
+<div class="clearfix"></div>
+
+
+
+
+        <footer>
+            <hr/>
+            <p>
+                &copy; 2017 叫我大王 with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+            </p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+
+</html>
+
+

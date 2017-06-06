@@ -15,8 +15,8 @@ ECMA-262把对象定义为：“无序属性的集合，其属性可以包含基
 
 ## 构造函数
 构造函数也是普通的函数，但是在其内部使用了this变量，对构造函数使用new运算符就能生成实例，并且this变量会绑定到实例对象上：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 function lineFamily(name,color){
     this.name=name;
     this.color=color;
@@ -27,20 +27,20 @@ console.log(Brown.name); //Brown
 console.log(Cony.color); //white
 {% endhighlight %}  
 此时“Brown”和“Cony”这两个“lineFamily”的实例对象，都会自动含有一个constructor属性，指向它们的构造函数，也就是“lineFamily”：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 console.log(Cony.constructor==lineFamily); //true
 {% endhighlight %}   
 JavaScript提供了instanceof运算符，用来验证原型对象与实例对象之间的关系：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 console.log(Cony instanceof lineFamily); //true
 {% endhighlight %}   
 
 ### 构造函数的问题：浪费内存
 如果为“lineFamily”添加几个不变的属性，就变成了这样：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 function lineFamily(name,color){
     this.name=name;
     this.color=color;
@@ -61,8 +61,8 @@ console.log(Brown.eat==Cony.eat);//false
 通过把不变的属性和方法直接定义在构造函数的prototype对象上，让不变的属性在内存中只生成一次。
 #### prototype模式
 JavaScript规定，每个构造函数都有一个prototype属性，指向另一个对象，这个对象的所有属性和方法都会被构造函数的实例继承。
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 function lineFamily(name,color){
     this.name=name;
     this.color=color;
@@ -78,25 +78,25 @@ console.log(Brown.company); //line
 Cony.eat(); //什么都吃
 {% endhighlight %}  
 这时所有lineFamily的实例的company和eat()，其实都是一个内存地址，指向prototype对象，因此就提高了执行效率。
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 console.log(Brown.eat==Cony.eat);//true
 {% endhighlight %}   
 #### prototype相关方法
 1.isPrototypeOf()：判断prototype对象和实例之间的关系，如果实例对象的原型链中具有prototype对象，则返回true；否则返回false：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 console.log(lineFamily.isPrototypeOf(Brown));//true
 {% endhighlight %}  
 2.hasOwnProperty()：判断属性是否为本地属性（私有属性），如果是本地属性，则返回true；如果是继承自prototype对象的属性或不具有该属性，则返回false：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 console.log(Brown.hasOwnProperty("name"));//true
 console.log(Cony.hasOwnProperty("company"));//false
 {% endhighlight %}     
 3.in运算符：判断实例是否具有某个属性（不论是本地属性还是继承自prototype对象的属性），也可以遍历对象的所有属性：
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 console.log("color" in Brown);//true
 console.log("eat" in Cony);//true
 for(var prop in Brown){
@@ -112,4 +112,3 @@ for(var prop in Brown){
 
 
 
-[回到拉萨](https://screamwitch.github.io)

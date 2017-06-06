@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript面向对象编程</title>
+    
+    <meta name="description" content="来自五四青年节的问候——少年，唯有学习与爱不可辜负！"> 
+    <meta name="author" content="叫我大王">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+    <nav class="navbar navbar-default visible-xs" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button> 
+            <a type="button" class="navbar-toggle nav-link" href="http://github.com/screamwitch">
+                <i class="fa fa-github"></i>
+            </a>
+              
+            <a class="navbar-brand" href="/">
+                <img src="//www.gravatar.com/avatar/?s=35" class="img-circle" /> 叫我大王
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/categories.html">Categories</a></li>
+                <li><a href="/tags.html">Tags</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <!-- nav-menu-dropdown -->
+    <div class="btn-group hidden-xs" id="nav-menu">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+            <li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+        </ul>
+    </div>
+
+    <div class="col-sm-3 sidebar hidden-xs" style="">
+        <!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+    <a href="/">
+        <img width=150 src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-circle" />
+    </a>
+    <h3 class="title">
+        <a href="/">叫我大王</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+    读不在三更五鼓，功只怕一曝十寒！
+</div>
+
+
+<div id="contact-list" class="text-center">
+    <ul class="list-unstyled list-inline">
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://github.com/screamwitch" target="_blank">
+                <i class="fa fa-github-alt fa-lg"></i>
+            </a>
+        </li>
+         
+        <li>
+            <a class="btn btn-default btn-sm" href="https://codepen.io/Conycony" target="_blank">
+                <i class="fa fa-codepen fa-lg"></i>
+            </a>
+        </li>
+         
+    </ul>
+    <!--<ul id="contact-list-secondary" class="list-unstyled list-inline">
+         
+        <li>
+            <a class="btn btn-default btn-sm" href="/feed.xml">
+                <i class="fa fa-rss fa-lg"></i>
+            </a>
+        </li>
+    </ul>-->
+</div>
+<!-- sidebar.html end -->
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3">
+        <div class="page-header">
+    <h1>JavaScript面向对象编程 </h1>
+</div>
+
+<article>
+
+    <div class="col-sm-10">
+        <span class="post-date">
+	   
+	   May 
+	   4th,
+	   
+	   2017
+	 </span>
+        <div class="article_body">
+            <h2 id="oop面向对象编程">OOP——面向对象编程</h2>
+<p>面向对象（Object-Oriented，OO）的语言有一个标志：它们都有类的概念，通过类可以创建任意多个具有相同属性和方法的对象。ECMAScript中没有类的概念，是通过 原型（prototype）的方式来实现面向对象编程的。<br />
+ECMA-262把对象定义为：“无序属性的集合，其属性可以包含基本值、对象或者函数。”严格来讲，这就相当于说对象是一组没有特定顺序的值。对象的每个属性或方法都有一个名字，而每个名字都映射到一个值。正因为这样，我们可以把ECMAScript的对象想象成散列表：无非就是一组键值对，其中值可以是数据或函数。</p>
+
+<h2 id="构造函数">构造函数</h2>
+<p>构造函数也是普通的函数，但是在其内部使用了this变量，对构造函数使用new运算符就能生成实例，并且this变量会绑定到实例对象上：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">color</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">Brown</span><span class="o">=</span><span class="k">new</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="s2">"Brown"</span><span class="p">,</span><span class="s2">"brown"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Cony</span><span class="o">=</span><span class="k">new</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="s2">"Cony"</span><span class="p">,</span><span class="s2">"white"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Brown</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">//Brown</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Cony</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span> <span class="c1">//white</span></code></pre></figure>
+
+<p>此时“Brown”和“Cony”这两个“lineFamily”的实例对象，都会自动含有一个constructor属性，指向它们的构造函数，也就是“lineFamily”：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Cony</span><span class="p">.</span><span class="nx">constructor</span><span class="o">==</span><span class="nx">lineFamily</span><span class="p">);</span> <span class="c1">//true</span></code></pre></figure>
+
+<p>JavaScript提供了instanceof运算符，用来验证原型对象与实例对象之间的关系：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Cony</span> <span class="k">instanceof</span> <span class="nx">lineFamily</span><span class="p">);</span> <span class="c1">//true</span></code></pre></figure>
+
+<h3 id="构造函数的问题浪费内存">构造函数的问题：浪费内存</h3>
+<p>如果为“lineFamily”添加几个不变的属性，就变成了这样：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">color</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">company</span><span class="o">=</span><span class="s2">"line"</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">eat</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"什么都吃"</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+<span class="c1">//生成实例</span>
+<span class="kd">var</span> <span class="nx">Brown</span><span class="o">=</span><span class="k">new</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="s2">"Brown"</span><span class="p">,</span><span class="s2">"brown"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Cony</span><span class="o">=</span><span class="k">new</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="s2">"Cony"</span><span class="p">,</span><span class="s2">"white"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Brown</span><span class="p">.</span><span class="nx">company</span><span class="p">);</span> <span class="c1">//line</span>
+<span class="nx">Cony</span><span class="p">.</span><span class="nx">eat</span><span class="p">();</span> <span class="c1">//什么都吃</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Brown</span><span class="p">.</span><span class="nx">eat</span><span class="o">==</span><span class="nx">Cony</span><span class="p">.</span><span class="nx">eat</span><span class="p">);</span><span class="c1">//false</span></code></pre></figure>
+
+<p>表面上看没什么问题，但实际上，没生成一个实例，company属性和eat()方法都是一样的，每一次生成实例，都是重复的内容，就会多占用内存，这样既不环保，也缺乏效率。</p>
+<h3 id="解决办法让不变的属性在内存中只生成一次">解决办法：让不变的属性在内存中只生成一次</h3>
+<p>通过把不变的属性和方法直接定义在构造函数的prototype对象上，让不变的属性在内存中只生成一次。</p>
+<h4 id="prototype模式">prototype模式</h4>
+<p>JavaScript规定，每个构造函数都有一个prototype属性，指向另一个对象，这个对象的所有属性和方法都会被构造函数的实例继承。
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">color</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">lineFamily</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">company</span><span class="o">=</span><span class="s2">"line"</span><span class="p">;</span>
+<span class="nx">lineFamily</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">eat</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"什么都吃"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">//生成实例</span>
+<span class="kd">var</span> <span class="nx">Brown</span><span class="o">=</span><span class="k">new</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="s2">"Brown"</span><span class="p">,</span><span class="s2">"brown"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Cony</span><span class="o">=</span><span class="k">new</span> <span class="nx">lineFamily</span><span class="p">(</span><span class="s2">"Cony"</span><span class="p">,</span><span class="s2">"white"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Brown</span><span class="p">.</span><span class="nx">company</span><span class="p">);</span> <span class="c1">//line</span>
+<span class="nx">Cony</span><span class="p">.</span><span class="nx">eat</span><span class="p">();</span> <span class="c1">//什么都吃</span></code></pre></figure>
+
+<p>这时所有lineFamily的实例的company和eat()，其实都是一个内存地址，指向prototype对象，因此就提高了执行效率。
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Brown</span><span class="p">.</span><span class="nx">eat</span><span class="o">==</span><span class="nx">Cony</span><span class="p">.</span><span class="nx">eat</span><span class="p">);</span><span class="c1">//true</span></code></pre></figure>
+
+<h4 id="prototype相关方法">prototype相关方法</h4>
+<p>1.isPrototypeOf()：判断prototype对象和实例之间的关系，如果实例对象的原型链中具有prototype对象，则返回true；否则返回false：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lineFamily</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">Brown</span><span class="p">));</span><span class="c1">//true</span></code></pre></figure>
+
+<p>2.hasOwnProperty()：判断属性是否为本地属性（私有属性），如果是本地属性，则返回true；如果是继承自prototype对象的属性或不具有该属性，则返回false：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Brown</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"name"</span><span class="p">));</span><span class="c1">//true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Cony</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">"company"</span><span class="p">));</span><span class="c1">//false</span></code></pre></figure>
+
+<p>3.in运算符：判断实例是否具有某个属性（不论是本地属性还是继承自prototype对象的属性），也可以遍历对象的所有属性：
+<!--<div class="env-header">JavaScript</div>--></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"color"</span> <span class="k">in</span> <span class="nx">Brown</span><span class="p">);</span><span class="c1">//true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"eat"</span> <span class="k">in</span> <span class="nx">Cony</span><span class="p">);</span><span class="c1">//true</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">Brown</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Brown["</span><span class="o">+</span><span class="nx">prop</span><span class="o">+</span><span class="s2">"]="</span><span class="o">+</span><span class="nx">Brown</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+<span class="p">};</span>
+<span class="c1">//Brown[name]=Brown</span>
+<span class="c1">//Brown[color]=brown</span>
+<span class="c1">//Brown[company]=line</span>
+<span class="c1">//Brown[eat]=function (){</span>
+<span class="c1">//    console.log("什么都吃");</span>
+<span class="c1">//}</span></code></pre></figure>
+
+
+        </div>
+
+        
+        <ul class="tag_box list-unstyled list-inline">
+            <li><i class="fa fa-folder-open"></i></li>
+              
+            <li><a href="/categories.html#技术文档-ref">
+					技术文档 <span>(2)</span>
+					
+				</a></li>
+             
+        </ul>
+         
+        <ul class="list-inline">
+            <li><i class="fa fa-tags"></i></li>
+              
+            <li>
+                <a href="/tags.html#JavaScript-ref">
+					JavaScript <span>(2)</span>
+					
+					</a>
+            </li>
+              
+        </ul>
+        
+
+        <hr>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: 'JavaScript面向对象编程',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+
+        <div>
+            <!--<section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=JavaScript面向对象编程"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>-->
+
+            <section class="col-sm-10 author">
+                <img style=" width:100px; border-radius:50%" src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-rounded author-image" />
+                <h4 class="section-title author-name">叫我大王</h4>
+                <p class="author-bio">读不在三更五鼓，功只怕一曝十寒！</p>
+            </section>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <ul class="pager">
+            
+            <li class="previous"><a href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2017/04/10/%E5%88%9D%E8%AF%86angularJS.html" title="初识angularJS-学习笔记">&larr; Previous</a></li>
+             
+            <li class="next"><a href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2017/06/06/webpack%E4%B8%AD%E4%BD%BF%E7%94%A8ECharts.html" title="webpack中使用ECharts">Next &rarr;</a></li>
+            
+        </ul>
+
+        <hr>
+    </div>
+
+    <div class="col-sm-2 sidebar-2">
+
+    </div>
+</article>
+<div class="clearfix"></div>
+
+
+
+
+        <footer>
+            <hr/>
+            <p>
+                &copy; 2017 叫我大王 with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+            </p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+
+</html>
+
+

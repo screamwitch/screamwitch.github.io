@@ -48,7 +48,7 @@ angularJS表达式写在双大括号{{}}内
 {: .blockquote}  
 
 使用双花括号{{}}在页面绑定的数据，在页面加载不完全的时候会暴露在页面中，这看起来一点都不高级，可以使用ng-bind指令来修改上面的代码。
-{% highlight html linenos %}
+{% highlight html %}
 <div ng-app>
   <p ng-bind="5+3"></p><!--表达式-->
   <p ng-init="quantity=4;price=5">

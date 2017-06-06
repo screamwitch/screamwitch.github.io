@@ -10,15 +10,15 @@ comments: true
 ---
 
 
-## npm安装ECharts
-
->  npm install echrats --save   
+## npm安装ECharts  
+>npm install echrats --save 
+{: .blockquote cite="http://www.worldwildlife.org/who/index.html" }
 
 ## 引入ECharts
 通过 npm 上安装的 ECharts 和 zrender 会放在node_modules目录下。可以直接在项目代码中 require('echarts') 得到 ECharts。
 
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js%}
 var echarts = require('echarts');
 
 // 基于准备好的dom，初始化echarts实例
@@ -42,8 +42,8 @@ myChart.setOption({
 ## 按需引入ECharts图标和组件
 默认使用 require('echarts') 得到的是已经加载了所有图表和组件的 ECharts 包，因此体积会比较大，如果在项目中对体积要求比较苛刻，也可以只按需引入需要的模块。
 例如上面示例代码中只用到了柱状图，提示框和标题组件，因此在引入的时候也只需要引入这些模块，可以有效的将打包后的体积从 400 多 KB 减小到 170 多 KB。
-<div class="env-header">JavaScript</div>
-{% highlight js linenos %}
+<!--<div class="env-header">JavaScript</div>-->
+{% highlight js %}
 // 引入 ECharts 主模块
 var echarts = require('echarts/lib/echarts');
 // 引入柱状图
@@ -71,4 +71,3 @@ myChart.setOption({
 {% endhighlight %}    
 可以按需引入的模块列表见[https://github.com/ecomfe/echarts/blob/master/index.js](https://github.com/ecomfe/echarts/blob/master/index.js)
 
-[回到拉萨](https://screamwitch.github.io)

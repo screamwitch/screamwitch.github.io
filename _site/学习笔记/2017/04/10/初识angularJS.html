@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>初识angularJS-学习笔记</title>
+    
+    <meta name="description" content="一起学习MVC框架angularJS"> 
+    <meta name="author" content="叫我大王">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+    <nav class="navbar navbar-default visible-xs" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button> 
+            <a type="button" class="navbar-toggle nav-link" href="http://github.com/screamwitch">
+                <i class="fa fa-github"></i>
+            </a>
+              
+            <a class="navbar-brand" href="/">
+                <img src="//www.gravatar.com/avatar/?s=35" class="img-circle" /> 叫我大王
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/categories.html">Categories</a></li>
+                <li><a href="/tags.html">Tags</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <!-- nav-menu-dropdown -->
+    <div class="btn-group hidden-xs" id="nav-menu">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+            <li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+        </ul>
+    </div>
+
+    <div class="col-sm-3 sidebar hidden-xs" style="">
+        <!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+    <a href="/">
+        <img width=150 src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-circle" />
+    </a>
+    <h3 class="title">
+        <a href="/">叫我大王</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+    读不在三更五鼓，功只怕一曝十寒！
+</div>
+
+
+<div id="contact-list" class="text-center">
+    <ul class="list-unstyled list-inline">
+        
+        <li>
+            <a class="btn btn-default btn-sm" href="https://github.com/screamwitch" target="_blank">
+                <i class="fa fa-github-alt fa-lg"></i>
+            </a>
+        </li>
+         
+        <li>
+            <a class="btn btn-default btn-sm" href="https://codepen.io/Conycony" target="_blank">
+                <i class="fa fa-codepen fa-lg"></i>
+            </a>
+        </li>
+         
+    </ul>
+    <!--<ul id="contact-list-secondary" class="list-unstyled list-inline">
+         
+        <li>
+            <a class="btn btn-default btn-sm" href="/feed.xml">
+                <i class="fa fa-rss fa-lg"></i>
+            </a>
+        </li>
+    </ul>-->
+</div>
+<!-- sidebar.html end -->
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3">
+        <div class="page-header">
+    <h1>初识angularJS-学习笔记 </h1>
+</div>
+
+<article>
+
+    <div class="col-sm-10">
+        <span class="post-date">
+	   
+	   April 
+	   10th,
+	   
+	   2017
+	 </span>
+        <div class="article_body">
+            <h2 id="angular四大核心特性">angular四大核心特性</h2>
+<ol>
+  <li>MVC<br />
+    M——Modle：数据模型层<br />
+    V——View：视图层，负责展示<br />
+    C——Controller：业务逻辑和控制逻辑</li>
+  <li>模块化</li>
+  <li>指令系统</li>
+  <li>双向数据绑定</li>
+</ol>
+
+<h2 id="controller使用中的注意点">Controller使用中的注意点</h2>
+<ol>
+  <li>不要试图去服用Controller，一个控制器一般只负责一小块视图；</li>
+  <li>不要在Controller中操作DOM，这不是控制器的职责；</li>
+  <li>不要在Controller里面做数据格式化，ng有很好用的表单控件；</li>
+  <li>不要在Controller里面做数据过滤操作，ng有$filter服务；</li>
+  <li>一般来说，Controller是不会相互调用的，控制器之间的交互会通过事件进行。</li>
+</ol>
+
+<h2 id="angular表达式">angular表达式</h2>
+<p>angularJS表达式写在双大括号内</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="NjWqWq" data-default-tab="html,result" data-user="Conycony" data-embed-version="2" data-pen-title="angularJS表达式" class="codepen">See the Pen <a href="http://codepen.io/Conycony/pen/NjWqWq/">angularJS表达式</a> by Cony (<a href="http://codepen.io/Conycony">@Conycony</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<div class="note alert">
+*注：ng-init初始化应用程序数据，并不常使用，通常用控制器或模块代替。
+</div>
+
+<h2 id="angular指令">angular指令</h2>
+
+<blockquote class="blockquote">
+  <p>ng-app：定义一个angularJS应用程序的边界范围；<br />
+ng-init：初始化应用程序数据；<br />
+ng-model： 把HTML元素值绑定到应用程序；<br />
+ng-bind：把应用程序数据绑定到HTML视图；<br />
+ng-repeat：重复HTML元素（应用于数组）；<br />
+自定义指令：使用.directive函数来添加自定义的指令。</p>
+
+</blockquote>
+
+<p>使用双花括号在页面绑定的数据，在页面加载不完全的时候会暴露在页面中，这看起来一点都不高级，可以使用ng-bind指令来修改上面的代码。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">ng-app</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">ng-bind=</span><span class="s">"5+3"</span><span class="nt">&gt;&lt;/p&gt;</span><span class="c">&lt;!--表达式--&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">ng-init=</span><span class="s">"quantity=4;price=5"</span><span class="nt">&gt;</span>
+  总价：<span class="nt">&lt;span</span> <span class="na">ng-bind=</span><span class="s">"quantity*price"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span><span class="c">&lt;!--数字--&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">ng-init=</span><span class="s">"firstName='Jim';lastName='Green'"</span><span class="nt">&gt;</span>
+  姓名：<span class="nt">&lt;span</span> <span class="na">ng-bind=</span><span class="s">"firstName+' '+lastName"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span><span class="c">&lt;!--字符串--&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">ng-init=</span><span class="s">"arr=[10,20,30]"</span><span class="nt">&gt;</span>
+  序号：<span class="nt">&lt;sapn</span> <span class="na">ng-bind=</span><span class="s">"arr[1]"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span><span class="c">&lt;!--数组--&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">ng-init=</span><span class="s">"person={firstName:'John',lastName:'Doe'}"</span><span class="nt">&gt;</span>
+  名字：<span class="nt">&lt;span</span> <span class="na">ng-bind=</span><span class="s">"person.firstName"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span><span class="c">&lt;!--对象--&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+        </div>
+
+        
+        <ul class="tag_box list-unstyled list-inline">
+            <li><i class="fa fa-folder-open"></i></li>
+              
+            <li><a href="/categories.html#学习笔记-ref">
+					学习笔记 <span>(2)</span>
+					
+				</a></li>
+             
+        </ul>
+         
+        <ul class="list-inline">
+            <li><i class="fa fa-tags"></i></li>
+              
+            <li>
+                <a href="/tags.html#angular-ref">
+					angular <span>(1)</span>
+					
+					</a>
+            </li>
+              
+        </ul>
+        
+
+        <hr>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+        var gitment = new Gitment({
+            id: '初识angularJS-学习笔记',
+            owner: 'screamwitch',
+            repo: 'blog',
+            oauth: {
+                client_id: '16d078f5667d361d9b8a',
+                client_secret: 'e04afe5b17277c09f1d6f5bb8017c45a8cd5f490',
+            },
+        });
+        gitment.render('container');
+        </script>
+
+        <div>
+            <!--<section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=初识angularJS-学习笔记"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>-->
+
+            <section class="col-sm-10 author">
+                <img style=" width:100px; border-radius:50%" src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-rounded author-image" />
+                <h4 class="section-title author-name">叫我大王</h4>
+                <p class="author-bio">读不在三更五鼓，功只怕一曝十寒！</p>
+            </section>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <ul class="pager">
+            
+            <li class="previous"><a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/2017/04/10/JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.html" title="JavaScript中的事件委托">&larr; Previous</a></li>
+             
+            <li class="next"><a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/2017/05/04/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B.html" title="JavaScript面向对象编程">Next &rarr;</a></li>
+            
+        </ul>
+
+        <hr>
+    </div>
+
+    <div class="col-sm-2 sidebar-2">
+
+    </div>
+</article>
+<div class="clearfix"></div>
+
+
+
+
+        <footer>
+            <hr/>
+            <p>
+                &copy; 2017 叫我大王 with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+            </p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+
+</html>
+
+
