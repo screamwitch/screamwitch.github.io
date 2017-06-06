@@ -20,41 +20,7 @@
             {{ content }}
         </div>
 
-        {% unless page.categories == empty %}
-        <ul class="tag_box list-unstyled list-inline">
-            <li><i class="fa fa-folder-open"></i></li>
-            {% assign categories_list = page.categories %} {% if categories_list.first[0] == null %} {% for category in categories_list %}
-            <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}-ref">
-					{{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
-					{% unless forloop.last %},{% endunless %}
-				</a></li>
-            {% endfor %} {% else %} {% for category in categories_list %}
-            <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}-ref">
-					{{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span>
-				</a></li>
-            {% endfor %} {% endif %}
-        </ul>
-        {% endunless %} {% unless page.tags == empty %}
-        <ul class="list-inline">
-            <li><i class="fa fa-tags"></i></li>
-            {% assign tags_list = page.tags %} {% if tags_list.first[0] == null %} {% for tag in tags_list %}
-            <li>
-                <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}-ref">
-					{{ tag }} <span>({{ site.tags[tag].size }})</span>
-					{% unless forloop.last %},{% endunless %}
-					</a>
-            </li>
-            {% endfor %} {% else %} {% for tag in tags_list %}
-            <li>
-                <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}-ref">
-						{{ tag[0] }} <span>({{ tag[1].size }})</span>
-						{% unless forloop.last %},{% endunless %}
-					</a>
-            </li>
-
-            {% endfor %} {% endif %} {% assign tags_list = nil %}
-        </ul>
-        {% endunless %}
+        
 
         <hr>
         <div id="container"></div>
@@ -92,16 +58,6 @@
           Google+
         </a>
       </section>-->
-
-            <section class="col-sm-10 author">
-                <img style=" width:100px; border-radius:50%" src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-rounded author-image" />
-                <h4 class="section-title author-name">{{site.author.name}}</h4>
-                <p class="author-bio">{{site.author.bio}}</p>
-            </section>
-        </div>
-
-        <div class="clearfix"></div>
-
         <ul class="pager">
             {% if page.previous %}
             <li class="previous"><a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
@@ -112,8 +68,50 @@
             {% else %}
             <li class="next disabled"><a>Next &rarr;</a> {% endif %}
         </ul>
+            <section class="col-sm-10 author">
+                <img style=" width:100px; border-radius:50%" src="http://oqi3y19bt.bkt.clouddn.com/17-6-6/34907621.jpg" class="img-rounded author-image" />
+                <h4 class="section-title author-name">{{site.author.name}}</h4>
+                <p class="author-bio">{{site.author.bio}}</p>
+            </section>
+        </div>
 
-        <hr>
+        <div class="clearfix"></div>
+       <hr>
+       {% unless page.categories == empty %}
+        <ul class="tag_box list-unstyled list-inline">
+            <li><i class="fa fa-folder-open"></i></li>
+            {% assign categories_list = page.categories %} {% if categories_list.first[0] == null %} {% for category in categories_list %}
+            <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}-ref">
+					{{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
+					{% unless forloop.last %},{% endunless %}
+				</a></li>
+            {% endfor %} {% else %} {% for category in categories_list %}
+            <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}-ref">
+					{{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span>
+				</a></li>
+            {% endfor %} {% endif %}
+        </ul>
+        {% endunless %} {% unless page.tags == empty %}
+        <ul class="list-inline">
+            <li><i class="fa fa-tags"></i></li>
+            {% assign tags_list = page.tags %} {% if tags_list.first[0] == null %} {% for tag in tags_list %}
+            <li>
+                <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}-ref">
+					{{ tag }} <span>({{ site.tags[tag].size }})</span>
+					{% unless forloop.last %},{% endunless %}
+					</a>
+            </li>
+            {% endfor %} {% else %} {% for tag in tags_list %}
+            <li>
+                <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}-ref">
+						{{ tag[0] }} <span>({{ tag[1].size }})</span>
+						{% unless forloop.last %},{% endunless %}
+					</a>
+            </li>
+
+            {% endfor %} {% endif %} {% assign tags_list = nil %}
+        </ul>
+        {% endunless %}
     </div>
 
     <div class="col-sm-2 sidebar-2">
